@@ -1,3 +1,7 @@
+---
+id: n_1624f780612c
+---
+
 # 第 2 章：Prompt 不是人格，Prompt 是控制平面
 
 > 来源：https://harness-books.agentway.dev/book1-claude-code/chapter-02-prompt-is-control-plane.html

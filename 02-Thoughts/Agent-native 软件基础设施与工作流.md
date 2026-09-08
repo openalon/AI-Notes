@@ -1,4 +1,5 @@
 ---
+id: n_5dce830924f9
 title: Agent-native 软件基础设施与工作流
 type: thought
 created: 2026-08-26

@@ -1,4 +1,5 @@
 ---
+id: n_88d3508fcaf4
 title: 都Agent时代了，我还是想分享给你这12个我最常用的Prompt
 tags:
   - AI

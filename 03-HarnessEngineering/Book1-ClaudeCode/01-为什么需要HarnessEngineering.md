@@ -1,3 +1,7 @@
+---
+id: n_3eaff8bba3a1
+---
+
 # 第 1 章：为什么需要 Harness Engineering
 
 > 来源：https://harness-books.agentway.dev/book1-claude-code/chapter-01-why-harness-engineering.html

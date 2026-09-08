@@ -1,4 +1,5 @@
 ---
+id: n_4939f8126b87
 title: Claude Code 创建者的实战方法：从代码库问答到自验证闭环
 tags:
   - Claude-Code

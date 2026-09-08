@@ -58,6 +58,7 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 知识库。用户�
 
 ```markdown
 ---
+id: n_<12 hex>
 title: <与文件名一致>
 tags:
   - AI
@@ -92,6 +93,7 @@ created: YYYY-MM-DD
 - 内部互链用 `[[笔记名]]`，外链用普通 Markdown。
 - `tags` 用已有风格：`AI`、`Agent`、`Agent-Native`、`Harness-Engineering`、`Git`、产品名、作者名。英文词保持 Pascal / kebab，与现有笔记一致。
 - `created` 用当天日期（会话里的「今天」）。
+- `id` 用 `n_` + 12 位 hex（例如 `python3 -c "import secrets; print('n_' + secrets.token_hex(6))"`），写入后永不改。网页评论和表情按这个 id 走，跟标题、文件名、路径无关。
 - 不要写「作为 AI 我认为」、不要列待办、不要在文末加「延伸阅读」堆砌。
 
 ### 4. 写 thought（仅当用户要判断，或材料本身是对照）
@@ -100,6 +102,7 @@ created: YYYY-MM-DD
 
 ```markdown
 ---
+id: n_<12 hex>
 title: <判断主题>
 type: thought
 created: YYYY-MM-DD
@@ -147,6 +150,7 @@ Thought 里禁止大段复述某篇文章；机制已经写在 `01-Articles/` �
 ### 6. 自检
 
 - 文件名、`title`、wikilink 三者一致
+- `id` 已写入且是新生成的，没有复用别的笔记
 - `source` 是可打开的原文链接
 - 一句话结论读起来像判断
 - 图能在 VitePress / Obsidian 里渲染（mermaid 或 `![[...]]`）

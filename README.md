@@ -20,9 +20,11 @@ npm run docs:preview   # 预览构建结果
 
 GitHub Pages：推 `main` 会走 `.github/workflows/deploy.yml` 自动构建并发布。仓库 Settings → Pages 选 GitHub Actions。站点地址是 `https://openalon.github.io/AI-Notes/`。
 
-页面评论用 [Utterances](https://utteranc.es/)，每篇文章对应一条 GitHub Issue。启用前：
+页面评论用 [Giscus](https://giscus.app/zh-CN)，每篇文章对应一条 GitHub Discussion。表情栏是讨论首帖的 reaction，用来给文章点赞，和单条评论的表情分开。匹配键是笔记 YAML 里的 `id`，改标题或文件名不会丢评论。启用前：
 
-1. 仓库保持 **Public**（Utterances 用公开 Issue Search）。
-2. 给仓库安装 [utterances app](https://github.com/apps/utterances)。
-3. 建一个名为 `comment` 的 Issue 标签（组件会给评论 Issue 打这个标）。
-4. 根目录 `utterances.json` 已列出 `https://blog.openalon.com` 和 `https://openalon.github.io`；换域名时同步改这份白名单。
+1. 仓库保持 **Public**。
+2. 仓库 Settings → General → Features 打开 **Discussions**。
+3. 给仓库安装 [giscus app](https://github.com/apps/giscus)。
+4. 用 Discussions 里的 **Announcements** 分类（只有维护者和 giscus 能开新帖）。
+5. 把分类 ID 填进 `.vitepress/theme/Comments.vue` 的 `CATEGORY_ID`。
+6. 根目录 `giscus.json` 已列出 `https://blog.openalon.com` 和 `https://openalon.github.io`；换域名时同步改这份白名单。

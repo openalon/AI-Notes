@@ -1,0 +1,10 @@
+{
+  "origins": [
+    "https://blog.openalon.com",
+    "https://openalon.github.io"
+  ],
+  "originsRegex": [
+    "http://127\\.0\\.0\\.1:[0-9]+",
+    "http://localhost:[0-9]+"
+  ]
+}

@@ -102,6 +102,7 @@
   margin: 2.5rem 0 0;
 }
 
-.note-comments .utterances {
-  max-width: 100%;
+.note-comments .giscus,
+.note-comments .giscus-frame {
+  width: 100%;
 }
