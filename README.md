@@ -19,3 +19,10 @@ npm run docs:preview   # 预览构建结果
 ```
 
 GitHub Pages：推 `main` 会走 `.github/workflows/deploy.yml` 自动构建并发布。仓库 Settings → Pages 选 GitHub Actions。站点地址是 `https://openalon.github.io/AI-Notes/`。
+
+页面评论用 [Utterances](https://utteranc.es/)，每篇文章对应一条 GitHub Issue。启用前：
+
+1. 仓库保持 **Public**（Utterances 用公开 Issue Search）。
+2. 给仓库安装 [utterances app](https://github.com/apps/utterances)。
+3. 建一个名为 `comment` 的 Issue 标签（组件会给评论 Issue 打这个标）。
+4. 根目录 `utterances.json` 已列出 `https://blog.openalon.com` 和 `https://openalon.github.io`；换域名时同步改这份白名单。

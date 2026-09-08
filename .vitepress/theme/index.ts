@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { h } from 'vue'
+import Comments from './Comments.vue'
 import Footer from './Footer.vue'
 import Source from './Source.vue'
 import { renderMermaid } from './mermaid'
@@ -11,6 +12,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'doc-footer-before': () => h(Source),
+      'doc-after': () => h(Comments),
       'layout-bottom': () => h(Footer)
     })
   },

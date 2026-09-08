@@ -97,3 +97,11 @@
 .note-source a {
   color: var(--vp-c-brand-1);
 }
+
+.note-comments {
+  margin: 2.5rem 0 0;
+}
+
+.note-comments .utterances {
+  max-width: 100%;
+}
