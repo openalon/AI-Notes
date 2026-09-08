@@ -1,0 +1,15 @@
+.claude/*
+!.claude/skills/
+!.claude/skills/**
+
+# Obsidian session/UI state — changes on every open
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/cache
+
+node_modules/
+.vitepress/dist/
+.vitepress/cache/
+.idea/
+.DS_Store

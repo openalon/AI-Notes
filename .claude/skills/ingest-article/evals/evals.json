@@ -1,0 +1,23 @@
+{
+  "skill_name": "ingest-article",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "整理这篇文章进知识库：https://zed.dev/blog/introducing-delta （若库里已有同名笔记，假装这是新文，用另一个文件名说明你本来会怎么落盘，不要覆盖现有文件。）",
+      "expected_output": "一篇 01-Articles/其他/ 下的学习总结，含 title/tags/source/created、一句话结论、mermaid、核心观点，并说明会往 00-Maps 最近新增插一条双链。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把这条 X 帖整理成笔记：https://x.com/riba2534/status/2034497532139872750",
+      "expected_output": "落在 01-Articles/X/，source 指向该帖，骨架仍是一句话结论 + 图 + 核心观点。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "对照 Zed Delta、Cursor Git at any scale、Anthropic AI-native SDLC、Warp self-improving agents 这四篇，写一篇 thought，不要再转述各篇细节。",
+      "expected_output": "02-Thoughts/ 下一篇 type: thought 笔记，related 双链回四篇已有文章，正文是分层对照和判断。",
+      "files": []
+    }
+  ]
+}

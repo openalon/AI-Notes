@@ -1,0 +1,10 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "99-Inbox",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "99-Inbox",
+  "promptDelete": false,
+  "showLineNumber": false,
+  "strictLineBreaks": false,
+  "useMarkdownLinks": true
+}

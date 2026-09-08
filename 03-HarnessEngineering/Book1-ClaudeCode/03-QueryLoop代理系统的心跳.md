@@ -1,0 +1,16 @@
+# 第 3 章：Query Loop — 代理系统的心跳
+
+> 来源：https://harness-books.agentway.dev/book1-claude-code/chapter-03-query-loop-heartbeat.html
+> 状态：未读
+
+## 核心概念
+
+（阅读后填写）
+
+## 关键洞察
+
+（阅读后填写）
+
+## 个人思考
+
+（阅读后填写）

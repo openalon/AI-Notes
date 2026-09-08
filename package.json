@@ -1,0 +1,16 @@
+{
+  "name": "ai-notes",
+  "version": "1.0.0",
+  "description": "AI 时代的学习笔记站点",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "mermaid": "^11.6.0",
+    "vitepress": "^1.6.3"
+  }
+}
