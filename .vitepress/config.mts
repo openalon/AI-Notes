@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
+import { gtmHead, injectGtmNoscript } from './gtm'
 import { collectNotes, obsidianMarkdown } from './obsidian'
 import { buildSidebar } from './sidebar'
 
@@ -49,6 +50,11 @@ export default defineConfig({
   description: 'AI 时代的文章学习总结、概念整理与模式沉淀',
   lastUpdated: true,
   cleanUrls: true,
+
+  transformHtml(code) {
+    return injectGtmNoscript(code)
+  },
+  head: [...gtmHead],
 
   markdown: {
     config(md) {
