@@ -4,7 +4,7 @@ title: Harness Engineering
 
 # Harness Engineering
 
-两本围绕 Harness Engineering 的系列书。章节笔记会逐步写进对应目录；现在先用来打开原网页和离线 PDF。
+两本围绕 Harness Engineering 的系列书。Book 1 章节笔记已从 PDF 填入对应目录；Book 2 仍待读。原网页和离线 PDF 仍可从下面打开。
 
 来源：[Harness Books](https://harness-books.agentway.dev/) · [GitHub](https://github.com/wquguru/harness-books)
 

@@ -4,7 +4,7 @@ layout: home
 hero:
   name: AI Notes
   text: 学习总结与模式沉淀
-  tagline: 文章拆解、独立判断、Harness Engineering 笔记。Obsidian 里写，网页上读。
+  tagline: 文章拆解、独立判断、Harness 与 Game Design Workshop 笔记。Obsidian 里写，网页上读。
   actions:
     - theme: brand
       text: 从地图开始
@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: Harness 系列
       link: /03-HarnessEngineering/
+    - theme: alt
+      text: Game Design Workshop
+      link: /04-GameDesignWorkshop/
 
 features:
   - icon: 🗺️
@@ -30,4 +33,8 @@ features:
     title: Harness Engineering
     details: 两本 Harness 书的章节笔记，对照 Claude Code 与 Codex 的控制面。
     link: /03-HarnessEngineering/
+  - icon: 🎲
+    title: Game Design Workshop
+    details: Fullerton 第五版章节笔记。先定玩家体验目标，再用原型和试玩打到它。
+    link: /04-GameDesignWorkshop/
 ---

@@ -39,7 +39,8 @@ export default defineConfig({
     '**/node_modules/**',
     '**/.obsidian/**',
     '**/.claude/**',
-    '**/.remember/**'
+    '**/.remember/**',
+    '04-GameDesignWorkshop/*.pdf'
   ],
   ignoreDeadLinks: true,
   base,
@@ -60,7 +61,8 @@ export default defineConfig({
       { text: '地图', link: '/00-Maps/AI知识库总览' },
       { text: '文章', link: '/01-Articles/' },
       { text: '思考', link: '/02-Thoughts/Agent-native 软件基础设施与工作流' },
-      { text: 'Harness', link: '/03-HarnessEngineering/' }
+      { text: 'Harness', link: '/03-HarnessEngineering/' },
+      { text: 'Game Design', link: '/04-GameDesignWorkshop/' }
     ],
     sidebar,
     search: { provider: 'local' },

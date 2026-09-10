@@ -59,43 +59,98 @@
 }
 
 /* 笔记从 ## 起笔、没有正文 h1。VitePress 默认给每个 h2 加顶边，第一条会顶到页面最上。 */
-.vp-doc h2:first-child {
+.vp-doc h2:first-child,
+.vp-doc .note-cite + h2 {
   border-top: none;
-  margin-top: 0;
+  margin-top: 1rem;
   padding-top: 0;
+}
+
+.vp-doc h1:has(+ .note-cite) {
+  margin-bottom: 0.15rem;
+}
+
+.vp-doc > .note-cite:first-child {
+  margin-top: 0;
+}
+
+/* 出处：标题下 / 正文顶的幽灵标签，不要 custom-block 灰底 */
+.vp-doc .note-cite {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.15rem;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.vp-doc .note-cite summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0;
+  padding: 0;
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.vp-doc .note-cite summary::-webkit-details-marker,
+.vp-doc .note-cite summary::marker {
+  display: none;
+  content: '';
+}
+
+.vp-doc .note-cite summary::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.5px 0 3.5px 5px;
+  border-color: transparent transparent transparent currentColor;
+  opacity: 0.75;
+  transform: translateY(0.5px);
+}
+
+.vp-doc .note-cite[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.vp-doc .note-cite summary:hover {
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .note-cite p {
+  margin: 0.2rem 0 0;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.vp-doc .note-cite a {
+  color: inherit;
+  font-weight: 500;
+}
+
+.vp-doc .note-cite a:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc .note-cite code {
+  font-size: 11px;
 }
 
 .vp-doc img {
   max-width: 100%;
   border-radius: 8px;
-}
-
-.note-source {
-  margin: 2.5rem 0 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-2);
-  font-size: 14px;
-}
-
-.note-source__title {
-  margin: 0 0 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-}
-
-.note-source ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-.note-source li {
-  word-break: break-all;
-}
-
-.note-source a {
-  color: var(--vp-c-brand-1);
 }
 
 .note-comments {

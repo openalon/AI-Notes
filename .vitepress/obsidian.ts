@@ -129,13 +129,104 @@ function rewriteWikiLinks(src: string, notes: NoteIndex): string {
   )
 }
 
+function parseSourceFromFrontmatter(src: string): string[] {
+  if (!src.startsWith('---')) return []
+  const end = src.indexOf('\n---', 3)
+  if (end === -1) return []
+  const fm = src.slice(4, end)
+  const sources: string[] = []
+  const lines = fm.split('\n')
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    const single = line.match(/^source:\s*(.+)\s*$/)
+    if (single && !single[1].startsWith('[') && single[1] !== '|' && single[1] !== '>') {
+      const v = single[1].trim().replace(/^['"]|['"]$/g, '')
+      if (v) sources.push(v)
+      break
+    }
+    if (line === 'source:' || line.match(/^source:\s*$/)) {
+      for (let j = i + 1; j < lines.length; j++) {
+        const item = lines[j].match(/^\s+-\s+(.+)\s*$/)
+        if (!item) break
+        sources.push(item[1].trim().replace(/^['"]|['"]$/g, ''))
+      }
+      break
+    }
+  }
+  return sources.filter(Boolean)
+}
+
+function escapeAttr(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+}
+
+function citeHtml(sources: string[]): string {
+  const links = sources.map((item, i) => {
+    if (/^https?:\/\//i.test(item)) {
+      const label = sources.length === 1 ? '原网页' : `原网页 ${i + 1}`
+      return `<a href="${escapeAttr(item)}">${label}</a>`
+    }
+    return escapeAttr(item)
+  })
+  return `<details class="note-cite">\n<summary>出处</summary>\n<p>来源：${links.join(' · ')}</p>\n</details>\n\n`
+}
+
+function injectSourceCite(src: string, frontmatter?: Record<string, unknown>): string {
+  if (src.includes('class="note-cite"')) return src
+  const fromFm = sourceList(frontmatter)
+  const sources = fromFm.length ? fromFm : parseSourceFromFrontmatter(src)
+  if (!sources.length) return src
+  const block = citeHtml(sources)
+
+  let bodyStart = 0
+  if (src.startsWith('---')) {
+    const end = src.indexOf('\n---', 3)
+    if (end !== -1) bodyStart = end + '\n---'.length
+  }
+  const head = src.slice(0, bodyStart)
+  let body = src.slice(bodyStart).replace(/^\n+/, '')
+  const h1 = body.match(/^# .+\n/)
+  if (h1) {
+    body = `${h1[0]}\n${block}${body.slice(h1[0].length).replace(/^\n+/, '')}`
+  } else {
+    body = block + body
+  }
+  if (!head) return body
+  return `${head}\n\n${body}`
+}
+
+function sourceList(frontmatter: Record<string, unknown> | undefined): string[] {
+  const raw = frontmatter?.source
+  if (!raw) return []
+  if (Array.isArray(raw)) return raw.map(String).map((s) => s.trim()).filter(Boolean)
+  if (typeof raw === 'string') {
+    const s = raw.trim()
+    return s ? [s] : []
+  }
+  return []
+}
+
 export function obsidianMarkdown(notes: NoteIndex) {
-  return (md: { core: { ruler: { before: (name: string, key: string, fn: (state: { src: string; env?: Record<string, unknown> }) => void) => void } } }) => {
+  return (md: {
+    core: {
+      ruler: {
+        before: (name: string, key: string, fn: (state: { src: string; env?: Record<string, unknown> }) => void) => void
+      }
+    }
+  }) => {
     md.core.ruler.before('normalize', 'obsidian-wiki', (state) => {
       const relativePath = String(state.env?.relativePath ?? '')
+      const frontmatter = state.env?.frontmatter as Record<string, unknown> | undefined
       let src = state.src
       src = rewriteWikiImages(src, relativePath)
       src = rewriteWikiLinks(src, notes)
+      // VitePress 的 frontmatter 插件先剥 YAML 再 render(content)，
+      // 所以文章笔记的 source: 要从 env.frontmatter 读，不能只扫正文。
+      src = injectSourceCite(src, frontmatter)
       state.src = src
     })
   }

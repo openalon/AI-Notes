@@ -1,7 +1,9 @@
 # Harness Engineering 学习笔记
 
-> 来源：[Harness Books](https://harness-books.agentway.dev/)
-> 开始时间：2026-04-15
+<details class="note-cite">
+<summary>出处</summary>
+<p>来源：<a href="https://harness-books.agentway.dev/">Harness Books</a> · 开始时间：2026-04-15</p>
+</details>
 
 两本围绕 Harness Engineering 的系列书籍，深入 Claude Code 和 Codex 的源码与设计哲学。
 
@@ -17,19 +19,19 @@
 
 | 进度 | 章节 | 主题 |
 |------|------|------|
-| [ ] | 序言 | Harness、终端与工程约束 |
-| [ ] | 第 1 章 | 为什么需要 Harness Engineering |
-| [ ] | 第 2 章 | Prompt 不是人格，Prompt 是控制平面 |
-| [ ] | 第 3 章 | Query Loop：代理系统的心跳 |
-| [ ] | 第 4 章 | 工具、权限与中断：为什么代理不能直接碰世界 |
-| [ ] | 第 5 章 | 上下文治理：Memory、CLAUDE.md 与 Compact 是预算制度 |
-| [ ] | 第 6 章 | 错误与恢复：出错后仍能继续工作的代理系统 |
-| [ ] | 第 7 章 | 多代理与验证：用分工和验证管理不稳定性 |
-| [ ] | 第 8 章 | 团队落地：把一个聪明工具变成可复用制度 |
-| [ ] | 第 9 章 | Harness Engineering 十条原则 |
-| [ ] | 附录 A | 检查清单：把原则落成能执行的约束 |
-| [ ] | 附录 B | 图示：把运行时骨架画出来 |
-| [ ] | 附录 C | 源码地图：本书各章主要依据哪些文件 |
+| [x] | 序言 | Harness、终端与工程约束 |
+| [x] | 第 1 章 | 为什么需要 Harness Engineering |
+| [x] | 第 2 章 | Prompt 不是人格，Prompt 是控制平面 |
+| [x] | 第 3 章 | Query Loop：代理系统的心跳 |
+| [x] | 第 4 章 | 工具、权限与中断：为什么代理不能直接碰世界 |
+| [x] | 第 5 章 | 上下文治理：Memory、CLAUDE.md 与 Compact 是预算制度 |
+| [x] | 第 6 章 | 错误与恢复：出错后仍能继续工作的代理系统 |
+| [x] | 第 7 章 | 多代理与验证：用分工和验证管理不稳定性 |
+| [x] | 第 8 章 | 团队落地：把一个聪明工具变成可复用制度 |
+| [x] | 第 9 章 | Harness Engineering 十条原则 |
+| [x] | 附录 A | 检查清单：把原则落成能执行的约束 |
+| [x] | 附录 B | 图示：把运行时骨架画出来 |
+| [x] | 附录 C | 源码地图：本书各章主要依据哪些文件 |
 
 ### Book 2：Claude Code 和 Codex 的 Harness 设计哲学
 

@@ -13,3 +13,6 @@ node_modules/
 .vitepress/cache/
 .idea/
 .DS_Store
+
+# Copyrighted book scans / paywall exports — local study only
+04-GameDesignWorkshop/*.pdf

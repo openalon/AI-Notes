@@ -21,7 +21,8 @@ const SECTION_LABELS: Record<string, string> = {
   '00-Maps': '地图',
   '01-Articles': '文章',
   '02-Thoughts': '思考',
-  '03-HarnessEngineering': 'Harness Engineering'
+  '03-HarnessEngineering': 'Harness Engineering',
+  '04-GameDesignWorkshop': 'Game Design Workshop'
 }
 
 type SidebarItem = {
@@ -34,7 +35,13 @@ type SidebarItem = {
 type RankedItem = SidebarItem & { created: string }
 
 export function buildSidebar(): SidebarItem[] {
-  const sections = ['00-Maps', '01-Articles', '02-Thoughts', '03-HarnessEngineering']
+  const sections = [
+    '00-Maps',
+    '01-Articles',
+    '02-Thoughts',
+    '03-HarnessEngineering',
+    '04-GameDesignWorkshop'
+  ]
   return sections
     .map((name) => {
       const abs = path.join(ROOT, name)

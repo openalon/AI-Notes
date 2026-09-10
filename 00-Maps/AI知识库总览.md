@@ -6,9 +6,14 @@ id: n_8bc29e8e88f9
 - `01-Articles/`：文章学习总结
 - `02-Thoughts/`：独立判断与综合思考
 - `03-HarnessEngineering/`：Harness 系列书笔记、原网页与离线 PDF
+- `04-GameDesignWorkshop/`：Tracy Fullerton《Game Design Workshop》第五版章节笔记
 
 ## 最近新增
 
+- [[03-形式元素]]：抽掉目标或程序，游戏就停机；试读停在玩家人数
+- [[00-GDW阅读地图]]：Game Design Workshop 第五版开读；方法没换，换的是时代语境
+- [[03-HarnessEngineering/Book1-ClaudeCode/00-序言]]：Book 1 已读完并写入章节笔记。立场：Prompt 决定怎么说话，Harness 决定怎么做事
+- [[09-十条原则]]：十条可带走的判断；Harness 比激情重要，制度比聪明重要，验证比自信重要
 - [[Uber：Running a Software Factory Efficiently at Uber Scale]]：用量涨 7 倍而账单持平，靠砍零价值 token 和托管 agent 舰队
 - [[Zed：Introducing Delta]]：软件在对话里成形，DeltaDB 记录 commit 之间的工作
 - [[Cursor：Git at any scale]]：Git 协议可留，托管必须把仓库从宠物变成牲口
