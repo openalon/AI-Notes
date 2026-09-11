@@ -7,9 +7,11 @@ id: n_8bc29e8e88f9
 - `02-Thoughts/`：独立判断与综合思考
 - `03-HarnessEngineering/`：Harness 系列书笔记、原网页与离线 PDF
 - `04-GameDesignWorkshop/`：Tracy Fullerton《Game Design Workshop》第五版章节笔记
+- `05-ClaudeCookbooks/`：Anthropic Claude Cookbooks 的章节笔记（recipe 不入库，只引用）
 
 ## 最近新增
 
+- [[00-Cookbooks阅读地图]]：Claude Cookbooks 开读；95 道 recipe 收成 12 章，不把 notebook 拷进库
 - [[03-形式元素]]：抽掉目标或程序，游戏就停机；试读停在玩家人数
 - [[00-GDW阅读地图]]：Game Design Workshop 第五版开读；方法没换，换的是时代语境
 - [[03-HarnessEngineering/Book1-ClaudeCode/00-序言]]：Book 1 已读完并写入章节笔记。立场：Prompt 决定怎么说话，Harness 决定怎么做事

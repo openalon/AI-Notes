@@ -19,6 +19,7 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 知识库。用户�
 02-Thoughts/                跨文之后的独立判断，不是转述
 03-HarnessEngineering/      只给 Harness 书章节笔记，不走本 skill 的文章模板
 04-GameDesignWorkshop/      只给 Game Design Workshop 章节笔记，不走本 skill 的文章模板
+05-ClaudeCookbooks/         只给 Claude Cookbooks 章节笔记，不走本 skill 的文章模板
 ```
 
 图片放在对应分区的 `_assets/`，例如 `01-Articles/X/_assets/`、`01-Articles/其他/_assets/`。不要把图丢进 `99-Inbox`。
@@ -31,6 +32,7 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 知识库。用户�
 | 读完多篇之后要自己的判断、对照、立场 | `02-Thoughts/` |
 | Harness 书某一章 | 不要用本 skill；去填 `03-HarnessEngineering/` 现有章节文件 |
 | Game Design Workshop 某一章 | 不要用本 skill；去填 `04-GameDesignWorkshop/` 现有章节文件 |
+| Claude Cookbooks 某一章 / 某道 recipe | 不要用本 skill；去填 `05-ClaudeCookbooks/` 现有章节文件。不要把 `.ipynb` 拷进库 |
 
 一篇源文对应一篇文章笔记。多篇源文合成一份判断时，才写 thought，并在 `related` 里双链回那些文章。
 

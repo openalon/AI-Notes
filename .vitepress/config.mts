@@ -68,7 +68,8 @@ export default defineConfig({
       { text: '文章', link: '/01-Articles/' },
       { text: '思考', link: '/02-Thoughts/Agent-native 软件基础设施与工作流' },
       { text: 'Harness', link: '/03-HarnessEngineering/' },
-      { text: 'Game Design', link: '/04-GameDesignWorkshop/' }
+      { text: 'Game Design', link: '/04-GameDesignWorkshop/' },
+      { text: 'Cookbooks', link: '/05-ClaudeCookbooks/' }
     ],
     sidebar,
     search: { provider: 'local' },

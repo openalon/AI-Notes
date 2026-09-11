@@ -22,7 +22,8 @@ const SECTION_LABELS: Record<string, string> = {
   '01-Articles': '文章',
   '02-Thoughts': '思考',
   '03-HarnessEngineering': 'Harness Engineering',
-  '04-GameDesignWorkshop': 'Game Design Workshop'
+  '04-GameDesignWorkshop': 'Game Design Workshop',
+  '05-ClaudeCookbooks': 'Claude Cookbooks'
 }
 
 type SidebarItem = {
@@ -40,7 +41,8 @@ export function buildSidebar(): SidebarItem[] {
     '01-Articles',
     '02-Thoughts',
     '03-HarnessEngineering',
-    '04-GameDesignWorkshop'
+    '04-GameDesignWorkshop',
+    '05-ClaudeCookbooks'
   ]
   return sections
     .map((name) => {
