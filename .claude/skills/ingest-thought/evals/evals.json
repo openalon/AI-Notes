@@ -1,0 +1,17 @@
+{
+  "skill_name": "ingest-thought",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "对照 Zed Delta、Cursor Git at any scale、Anthropic AI-native SDLC、Warp self-improving agents 这四篇，写一篇 thought，不要再转述各篇细节。",
+      "expected_output": "02-Thoughts/ 下一篇 type: thought 笔记，related 双链回四篇已有文章，正文是分层对照和判断，并往 00-Overview 最近新增插一条双链。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "把这篇博客整理成思考：https://zed.dev/blog/introducing-delta",
+      "expected_output": "拒绝直接写 thought。先走 ingest-article 落盘源文，或说明单篇源文不够对照；只有用户明确要跨文立场时才写 02-Thoughts/。",
+      "files": []
+    }
+  ]
+}

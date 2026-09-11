@@ -1,0 +1,23 @@
+{
+  "skill_name": "ingest-book",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 Claude Cookbooks 收成一本笔记，不要把 notebook 拷进库。",
+      "expected_output": "05-ClaudeCookbooks/ 下阅读导读 + 按工程依赖排的章节文件；cite 芯片；对照 recipe 用 ::: details 摘机制片段并链 GitHub；无 .ipynb 入库；侧栏 SECTION_LABELS、书籍下拉、总览都接到。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Game Design Workshop 第 4 章读完了，把骨架填上。",
+      "expected_output": "只改 04-GameDesignWorkshop/04-戏剧元素.md 现有文件，保留 id；cite 改为已读；写一句话 / 核心概念 / 关键洞察 / 个人思考；不改成文章 YAML 模板。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "新开一本 Design of Everyday Things 当 Book 5。",
+      "expected_output": "新建 06- 或下一个空闲 NN- 目录；阅读导读 basename 带短前缀保证唯一；书籍下拉加一项而不是一级 nav；总览最近新增插双链。",
+      "files": []
+    }
+  ]
+}
