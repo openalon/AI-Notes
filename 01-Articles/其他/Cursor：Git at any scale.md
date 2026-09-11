@@ -39,7 +39,7 @@ flowchart LR
         C1 --> C2 --> C3 --> C4
     end
 
-    P[Agent 负载<br/>巨仓 + 海量抛掷仓] --> spokes
+    P[Agent 负载<br/>巨仓 + 海量短命仓库] --> spokes
     P --> cont
     spokes -.->|地板太高 天花板太低| X[推送变慢 / 运维变宠物]
     cont --> Y[正确优先于降级<br/>健康时再求快]
@@ -99,7 +99,7 @@ Martí 的原话：
 
 > You have to treat repositories as pets, not cattle.
 
-这是整篇文章的情绪核：旧托管把仓库当宠物；agent 时代必须把仓库当牲口。
+这是整篇文章的情绪核：旧托管把仓库当宠物；agent 时代必须把仓库当牲畜。
 
 ### 5. Continuity：留下 Spokes 做对的，丢掉「3PC 即真理」
 
@@ -124,7 +124,7 @@ Continuity 保留：原生 Git on NVMe、packfile 层工作、强一致。丢掉
 两个方向都能伸缩：
 
 - 热 monorepo 可以有上百副本给 CI
-- agent 抛掷仓可以只有一份
+- agent 用完即弃的短命仓库可以只有一份
 - 闲置拷贝可以 GC，下次 fetch 再重建
 - 持久化不需要额外副本，因为 S3 拿着真理
 
@@ -166,7 +166,7 @@ Origin 是 Cursor 的 Git 托管，2026-08-17 起在付费计划早鸟 beta。�
 
 Martí 把 Origin 说成多年做这些系统的人拿出来的生产哲学，不是实验室 demo。VCS 宕机代价极高，也很难隔夜替换，所以他们要低摩擦迁出旧主机。
 
-底层信念很统一：**继续给世界原生 Git；对内把宠物变成牲口。**
+底层信念很统一：**继续给世界原生 Git；对内把宠物变成牲畜。**
 
 ## 核心脉络
 
@@ -174,7 +174,7 @@ Martí 把 Origin 说成多年做这些系统的人拿出来的生产哲学，�
 2. 对象级拆分失败，文件系统级拆分失败，行业收敛到「本地 NVMe Git + 应用层复制」
 3. Spokes / 3PC 在人类规模的仓库数量下是最优，在 agent 规模下地板太高、天花板太低
 4. 把真理从磁盘 quorum 挪到对象存储 WAL，磁盘 Git 降级成可丢可重建的缓存
-5. 副本数量跟流量走：巨仓上百份，抛掷仓一份，闲置零份
+5. 副本数量跟流量走：巨仓上百份，短命仓库一份，闲置零份
 6. 对外仍是普通 Git，对内才是新基础设施——这才能低摩擦替换
 
 ## 对实际工作的启发
@@ -194,7 +194,7 @@ Martí 把 Origin 说成多年做这些系统的人拿出来的生产哲学，�
 
 ### 和本库其他笔记的关系
 
-- [[Harness Engineering：当工程师不再写代码]] 把仓库当成 Agent 的系统记录。这篇文章回答的是下一层：当 Agent 把仓库数量和 clone 频率打到另一个数量级，记录系统自己怎么活
+- [[Harness Engineering：当工程师不再写代码]] 把仓库当成 Agent 的系统记录。这篇文章回答的是下一层：当 Agent 把仓库数量和 clone 频率推到另一个数量级，记录系统自己怎么活
 - [[Zed：Introducing Delta]] 处理 commit 之间的语义；本文处理 commit 之上的物理复制。一个改工作协议，一个改托管协议
 - [[Anthropic：The AI-native SDLC playbook]] 让生命周期按机器速度循环；本文让仓库按机器流量复制。一边是控制面能转，一边是数据面能扛
 - [[Warp：How Warp builds self-improving agents on Claude]] 的进化产物是小而勤的 skill PR——另一种 agent 流量，host 同样要扛

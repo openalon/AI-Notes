@@ -43,11 +43,11 @@ id: n_97467eacc98d
 
 ### PDF / 网页是语料入口，不是检索策略
 
-`misc/pdf_upload_summarization.ipynb`、`misc/read_web_pages_with_haiku.ipynb`：把文件和页面变成可切的文本。切完仍要走上面的评测。网页当即时语料时，Haiku 适合抽，最终合成留给更强模型（第 5 章 sub-agent 同构）。
+`misc/pdf_upload_summarization.ipynb`、`misc/read_web_pages_with_haiku.ipynb`：把文件和页面变成可切的文本。切完仍要走上面的评测。网页当即时语料时，Haiku 适合抽，最终合成留给更强模型（和第 5 章子代理同一做法）。
 
 向量库和 LlamaIndex 的适配器放到 [[12-集成与第三方]]。本章只看机制：评什么、chunk 补什么、结构化查询走哪条路。
 
-对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
+对照 recipe（默认折叠；机制片段摘自官方 notebook，全文在 GitHub）：
 
 ::: details `capabilities/retrieval_augmented_generation/guide.ipynb` — 摘要索引 + rerank；检索 / e2e 分测
 

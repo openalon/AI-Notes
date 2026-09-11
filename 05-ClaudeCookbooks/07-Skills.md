@@ -44,11 +44,11 @@ MCP 给「能调 GitHub」；Skill 给「按我们的月报模板出 xlsx」。B
 
 `03_skills_custom_development.ipynb`：自己写 skill 的形状——frontmatter 决定发现率，正文决定加载后的行为，脚本决定可靠性。description 写差，模型根本不会加载。
 
-### CMA 会自动捡仓库技能
+### 托管 Agents 会自动发现仓库里的技能
 
 `managed_agents/CMA_use_skills_from_a_repo.ipynb`：托管会话从 repo 的 `.claude/skills` 发现技能。本地约定和云端会话是同一份文件，不是两套文档。
 
-对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
+对照 recipe（默认折叠；机制片段摘自官方 notebook，全文在 GitHub）：
 
 ::: details `skills/notebooks/01_skills_introduction.ipynb` — 三级加载、和 code execution 的关系
 
@@ -215,7 +215,7 @@ else:
 
 :::
 
-::: details `managed_agents/CMA_use_skills_from_a_repo.ipynb` — CMA 自动捡仓库 `.claude/skills`
+::: details `managed_agents/CMA_use_skills_from_a_repo.ipynb` — 托管 Agents 自动发现仓库 `.claude/skills`
 
 [GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/managed_agents/CMA_use_skills_from_a_repo.ipynb)
 
@@ -281,7 +281,7 @@ Skills 解决的是 **程序性知识的分发和计费**。全塞 system：每�
 
 ## 个人思考
 
-第 1 章钉输出形状（xlsx 也是一种形状）；本章钉「怎么稳定地造出那种形状」。下一章 Agent SDK 会把 skill、tool、CLAUDE.md 放进同一个 query loop——skill 是控制面的一层，不是插件市场。
+第 1 章钉输出形状（xlsx 也是一种形状）；本章钉「怎么稳定地造出那种形状」。下一章 Agent SDK 会把 skill、tool、CLAUDE.md 放进同一个主循环——skill 是控制面的一层，不是插件市场。
 
 ## 相关
 

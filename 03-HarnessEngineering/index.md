@@ -12,7 +12,7 @@ title: Harness Engineering
 
 ## Book 1：Claude Code 设计指南
 
-围绕 Claude Code 的运行时骨架：控制面、连续性、恢复路径、验证分工。
+围绕 Claude Code 的运行时结构：控制面、连续性、恢复路径、验证分工。
 
 - 原网页：[harness-books.agentway.dev/book1-claude-code](https://harness-books.agentway.dev/book1-claude-code/)
 - 离线 PDF：[在浏览器打开](./Book1-ClaudeCode/book1-claude-code.pdf)

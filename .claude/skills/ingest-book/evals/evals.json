@@ -18,6 +18,12 @@
       "prompt": "新开一本 Design of Everyday Things 当 Book 5。",
       "expected_output": "新建 06- 或下一个空闲 NN- 目录；阅读导读 basename 带短前缀保证唯一；书籍下拉加一项而不是一级 nav；总览最近新增插双链。",
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "导读图上能不能写 PTC / CMA / 未打到？",
+      "expected_output": "不能。转 note-language：图上先写中文，不要内部动词和未解释缩写。不要在本 skill 里再抄一份反例表。",
+      "files": []
     }
   ]
 }

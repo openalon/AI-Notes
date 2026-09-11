@@ -7,7 +7,7 @@ description: 把一本书或官方 recipe 集整理进 AI-Notes 的书籍分区�
 
 把一本书变成这个仓库里的章节笔记，而不是聊天记录或书摘。笔记同时给 Obsidian 和 VitePress 用。
 
-先读本文件。对照成品时打开 [references/examples.md](references/examples.md)。
+先读本文件。对照成品时打开 [references/examples.md](references/examples.md)。用词先读 [../note-language/SKILL.md](../note-language/SKILL.md)。
 
 文章走 `ingest-article`，跨文判断走 `ingest-thought`。本 skill 只管 `03-` 起的书籍分区。
 
@@ -33,7 +33,7 @@ NN-<ShortName>/                 下一本：编号递增，短英文目录名
 | 一篇博客 / 一条 X | 不要用本 skill，转 `ingest-article` |
 | 对照几篇文章之后的立场 | 不要用本 skill，转 `ingest-thought` |
 
-助手就是阅读的人。用户说「阅读后填写也需要你来填」时，空骨架不可接受；按 Book 1 / 已填 GDW 的密度写完。读不到原文就停，向用户要 PDF、网页或对照仓库，不要补造章节。
+助手就是阅读的人。用户说「阅读后填写也需要你来填」时，空占位不可接受；按 Book 1 / 已填 GDW 的密度写完。读不到原文就停，向用户要 PDF、网页或本机官方仓库，不要补造章节。
 
 ## 一本新书怎么落盘
 
@@ -88,9 +88,7 @@ flowchart TD
 ## 相关
 ```
 
-图上的分支标签用普通读者能看懂的词。不要缩成黑话。GDW 的教训：写「未打到 / 打到了」没人懂；写成「还没达到目标，回去改 / 达到目标，进入制作」。
-
-站点入口叫 **总览**（`00-Overview`），书怎么读叫 **阅读导读**，源码去哪找叫 **源码索引**。不要再用「地图」当这三层的名字。
+图上的分支标签、导读一句话、专题首页用词走 `note-language`。站点入口叫总览，书怎么读叫阅读导读，源码去哪找叫源码索引。
 
 ### 4. 章节文件
 
@@ -122,7 +120,7 @@ id: n_<12 hex>
 - [[下一章]]
 ```
 
-未读章只留骨架：cite 写「状态：未读」，三个填写块可以暂时空，但必须有 `id`、标题、cite、相关。不要用文章模板的 `title` / `tags` / `source` / `created` YAML——书的出处在 cite 芯片里，网页评论只认 `id`。
+未读章先占位：cite 写「状态：未读」，三个填写块可以暂时空，但必须有 `id`、标题、cite、相关。不要用文章模板的 `title` / `tags` / `source` / `created` YAML——书的出处在 cite 芯片里，网页评论只认 `id`。助手之间可以说骨架；贴进网页的文件写「占位」。
 
 `id` 用 `n_` + 12 位 hex，写入后永不改。
 
@@ -142,11 +140,11 @@ id: n_<12 hex>
 
 ### 官方 notebook / recipe 集（Cookbooks）
 
-- **不把 `.ipynb` 拷进本库。** 对照仓库留在本机（例如 `~/workspace2/claude-cookbooks`），笔记只引用 GitHub 路径。
+- **不把 `.ipynb` 拷进本库。** 官方 notebook 留在本机的 claude-cookbooks 仓库，笔记只引用 GitHub 路径。网页 cite 不要写本机绝对路径。
 - 上游按文件夹堆例子；章节按工程依赖重排。阅读导读说明为什么是这个顺序。
-- 对照 recipe 不要只写文件名。写成 VitePress `::: details`，默认折叠，里面放**证明该章判断的机制片段**（不是 pip / API key / wget），外加 GitHub 全文链接。
+- 对照 recipe 不要只写文件名。写成 VitePress `::: details`，默认折叠，里面放**证明该章判断的机制片段**（不是 pip / API key / wget），外加 GitHub 全文链接。各章引导句写成「机制片段摘自官方 notebook」，不要写「对照仓库」。
 - 不要用裸 `<details>` 包代码块：CommonMark 会在空行处结束 HTML，fence 会漏到折叠外面。必须用 `::: details`。
-- 片段从对照仓库现摘，不要凭记忆写代码。整本 notebook 太长就只摘机制格；不要为了「有源码」把 2000 行 cost notebook 贴进来。
+- 片段从本机官方仓库现摘，不要凭记忆写代码。整本 notebook 太长就只摘机制格；不要为了「有源码」把 2000 行 cost notebook 贴进来。
 
 ## 填已有章
 
@@ -154,7 +152,7 @@ id: n_<12 hex>
 2. 读原文（网页 / PDF / notebook），按「一句话 / 核心概念 / 关键洞察 / 个人思考」填满。
 3. 更新 `README.md` 进度表对应行的 `[ ]` → `[x]` 或 `[~]`。
 4. 相关双链指向阅读导读和相邻章；需要跨书对照时链到那一章，不要链到文章模板。
-5. 图和停手条件用白话。用户已经抱怨过的黑话，不要再写回去。
+5. 图和「可以进入下一步的标准」用白话，细则见 `note-language`。
 
 ## 自检
 
@@ -171,9 +169,8 @@ id: n_<12 hex>
 - 不要把章节笔记写成 `01-Articles` 的学习总结骨架。
 - 不要为了网页把 `[[wikilink]]` 改成 Markdown 链接。
 - 不要往顶栏一级 nav 每加一本就多一项。
-- 不要把「地图」当站点入口、阅读导读、源码索引的统称。
 - 不要在对话里总结完一章却不改文件。
 
-## 修笔记时回写本 skill
+## 修笔记时回写
 
-用户让你改书籍呈现（词、折叠源码、导航、cite、图上的标签）且改动已经落盘、以后还会再犯，把那条写进本文件对应小节。不要写「记得仔细」这类空话；写可执行的约束，最好带反例。文章侧的同类修复写 `ingest-article`，思考侧写 `ingest-thought`。
+用词、图上的标签、直译、本机路径 → `note-language`。书籍落盘流程（目录、cite、`::: details`、书籍下拉）→ 本文件。文章侧写 `ingest-article`，思考侧写 `ingest-thought`。

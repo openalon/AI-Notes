@@ -11,7 +11,7 @@ id: n_c7c798a1443d
 
 ## 一句话
 
-**Agent SDK 把 query loop 收成你进程里的运行时：同一套 Read / Edit / Bash / 权限 / 缓存，从 one-liner 到可托管。** `query()` 无状态；生产多轮用 `ClaudeSDKClient`。SDK 把循环放在你这边，下一章 CMA 把循环收到服务端——对照着读，不是升级关系。
+**Agent SDK 把主循环收成你进程里的运行时：同一套 Read / Edit / Bash / 权限 / 缓存，从几行代码到可托管。** `query()` 无状态；生产多轮用 `ClaudeSDKClient`。SDK 把循环放在你这边，下一章托管 Agents 把循环收到服务端——对照着读，不是升级关系。
 
 ## 核心概念
 
@@ -46,7 +46,7 @@ id: n_c7c798a1443d
 | `Agent(...)` + `Runner.run` | `ClaudeAgentOptions` + `ClaudeSDKClient` |
 | `@function_tool` | `@tool` + `create_sdk_mcp_server`（进程内 MCP，无网络） |
 | input/output guardrail | 循环前后的普通函数（或 `UserPromptSubmit` hook） |
-| Sessions / `conversation_id` | 同一 client；`resume=session_id` 落盘 |
+| Sessions / `conversation_id` | 同一 client；`resume=session_id` 持久化 |
 | 内置 tracing | OTel → 你已有的 Grafana/Datadog |
 | `handoffs` | `AgentDefinition` + Agent tool |
 
@@ -58,7 +58,7 @@ id: n_c7c798a1443d
 
 其余：`06` 安全向检测；`07` 进程外托管；`08` 运行时编排 subagent；`scheduled_repository_reviewer` 定时审仓库。编号顺序就是复杂度顺序。
 
-对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
+对照 recipe（默认折叠；机制片段摘自官方 notebook，全文在 GitHub）：
 
 ::: details `claude_agent_sdk/00_The_one_liner_research_agent.ipynb` — 最小可运行 agent
 
@@ -613,7 +613,7 @@ Guardrail 从框架装饰器变回普通函数——拒绝逻辑留在你的代�
 
 ## 个人思考
 
-读完 00–05 已经够用。06–08 和定时审查是同一运行时的领域皮肤。若你的问题是「不想运维循环」，下一章 CMA；若你要 IDE / 桌面 / 自建权限，留在 SDK。
+读完 00–05 已经够用。06–08 和定时审查是同一运行时的领域皮肤。若你的问题是「不想运维循环」，下一章托管 Agents；若你要 IDE / 桌面 / 自建权限，留在 SDK。
 
 ## 相关
 

@@ -24,6 +24,12 @@
       "prompt": "Game Design Workshop 第 4 章读完了，把骨架填上。",
       "expected_output": "不走本 skill。转 ingest-book，填 04-GameDesignWorkshop 现有章节文件。",
       "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "这篇文章对照表里 cattle 我写成牲口了，图上还写了打到另一个数量级。",
+      "expected_output": "按 note-language 改：牲畜、推到。不要改源文引语或作者自己的概念。用词规则写在 note-language，不在本 skill 再抄反例。",
+      "files": []
     }
   ]
 }

@@ -21,7 +21,7 @@ id: n_f48110a8c047
 
 无状态看起来优雅，对代理系统作用有限。忽视状态并不能消除状态，只会让它以更难管理的方式返回。`query.ts` 把可变状态定义清楚并整体装配成 State：messages、toolUseContext、autoCompactTracking、maxOutputTokensRecoveryCount、hasAttemptedReactiveCompact、pendingToolUseSummary、stopHookActive、turnCount、transition。脚本只关心这一步跑没跑完；代理系统还要关心这一步失败之后，下一步能不能承接前面留下的状态。
 
-循环骨架：
+循环结构：
 
 ```
 state = { messages, toolUseContext, autoCompactTracking, ... }

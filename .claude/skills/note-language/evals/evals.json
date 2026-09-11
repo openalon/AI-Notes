@@ -1,0 +1,29 @@
+{
+  "skill_name": "note-language",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Game Design Workshop 阅读导读的 mermaid 里，试玩不过要怎么标？",
+      "expected_output": "还没达到目标，回去改 / 达到目标，进入制作。不要写「未打到 / 打到了」。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Cookbooks 出处芯片要不要写对照仓库 ~/workspace2/claude-cookbooks？",
+      "expected_output": "不要。网页 cite 写官方 notebook 留在本机的 claude-cookbooks 仓库，或 GitHub 链接。本机绝对路径不进入口页。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "整理 Prompt 那篇时，文里的「能量地图」要不要改成总览？",
+      "expected_output": "不要改。源文固有概念和原文引语保留。站点入口才叫总览。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Cursor 那篇 pets vs cattle，对照表里 cattle 译成什么？",
+      "expected_output": "牲畜，并保留 pets vs cattle 对照。不要写牲口。不要改原文引语。",
+      "files": []
+    }
+  ]
+}

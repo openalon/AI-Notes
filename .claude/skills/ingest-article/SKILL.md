@@ -7,7 +7,7 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 的文章分区。�
 
 把一篇外部材料变成这个仓库里的文章笔记，而不是聊天记录。笔记同时给 Obsidian 和 VitePress 用。
 
-先读本文件。对照成品时打开 [references/examples.md](references/examples.md)。
+先读本文件。对照成品时打开 [references/examples.md](references/examples.md)。用词先读 [../note-language/SKILL.md](../note-language/SKILL.md)。
 
 跨文判断走 `ingest-thought`。一本书或 recipe 集走 `ingest-book`。本 skill 只管 `01-Articles/`。
 
@@ -25,8 +25,6 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 的文章分区。�
 ```
 
 图片放在对应分区的 `_assets/`，例如 `01-Articles/X/_assets/`、`01-Articles/其他/_assets/`。不要把图丢进 `99-Inbox`。
-
-站点入口叫 **总览**（`00-Overview`）。不要把这个文件或这个目录再叫「地图」。
 
 ## 何时用
 
@@ -95,7 +93,7 @@ created: YYYY-MM-DD
 写作约束：
 
 - **一句话结论**是判断，不是「本文介绍了…」。可以加粗关键从句。
-- **一张图**优先 ` ```mermaid `。图上的分支标签用普通读者能看懂的词，不要缩成黑话。只有原文已经有必须保留的配图时，才把图存到 `_assets/` 并用 `![[01-Articles/.../_assets/<file>.png]]`。
+- **一张图**优先 ` ```mermaid `。标签用词走 `note-language`。只有原文已经有必须保留的配图时，才把图存到 `_assets/` 并用 `![[01-Articles/.../_assets/<file>.png]]`。
 - **核心观点** 4–8 条。每条先写机制，再写它否定了什么旧假设。
 - 内部互链用 `[[笔记名]]`，外链用普通 Markdown。
 - `tags` 用已有风格：`AI`、`Agent`、`Agent-Native`、`Harness-Engineering`、`Git`、产品名、作者名。英文词保持 Pascal / kebab，与现有笔记一致。
@@ -147,6 +145,6 @@ created: YYYY-MM-DD
 
 按文章笔记全流程做完：落盘、画图、更新总览、重跑本仓库 `npm run docs:dev`。做完用两三句话说明写到了哪个文件、一句话结论是什么、网页地址。不要问「要不要保存」。
 
-## 修笔记时回写本 skill
+## 修笔记时回写
 
-用户让你改文章呈现（cite、总览用词、图上的标签、骨架缺块）且改动已经落盘、以后还会再犯，把可执行的那条写进本文件对应小节。不要写「记得仔细」这类空话；最好带反例。思考侧写 `ingest-thought`，书籍侧写 `ingest-book`。
+用词、图上的标签、直译、本机路径 → `note-language`。文章落盘流程（YAML、cite、目录）→ 本文件。思考侧写 `ingest-thought`，书籍侧写 `ingest-book`。

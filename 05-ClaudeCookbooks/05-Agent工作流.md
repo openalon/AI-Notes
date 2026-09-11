@@ -38,7 +38,7 @@ id: n_ec2b8f15bf11
 
 ### Evaluator-optimizer：有尺子才配闭环
 
-`evaluator_optimizer.ipynb` 两个适配信号：反馈能 demonstrably 改进输出；模型自己能给出有意义的反馈。例子是迭代写代码。没有清晰标准就不要上这个环——你会得到一对互相吹捧的模型。第 9 章 CMA outcome grader、第 10 章 evals 是同一原则的产品化和评测化。
+`evaluator_optimizer.ipynb` 两个适配信号：反馈能明确改进输出；模型自己能给出有意义的反馈。例子是迭代写代码。没有清晰标准就不要上这个环——你会得到一对互相吹捧的模型。第 9 章托管 Agents 的结果评分器、第 10 章评测，是同一原则的产品化和评测化。
 
 ### 异步多代理：先看消息路径
 
@@ -53,7 +53,7 @@ id: n_ec2b8f15bf11
 
 `multimodal/using_sub_agents.ipynb`：Apple 2023 财报 PDF 表多，传统解析吃力，转成图给 Haiku 抽，Opus 写回答和 matplotlib。编排者（Opus）先为每个 Haiku 写专用 prompt。演示里 `exec` 模型代码——注释自己说了，沙箱外不要这样。模型分层：便宜模型读量大的模态，贵模型做合成和作图。第 9 章 plan-big/execute-small 是托管版。
 
-对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
+对照 recipe（默认折叠；机制片段摘自官方 notebook，全文在 GitHub）：
 
 ::: details `patterns/agents/basic_workflows.ipynb` — 链式 / 路由 / 并行，还没到「agent」神话
 
@@ -456,11 +456,11 @@ print(extracted_info)
 
 工作流选型是一张短表：形状稳定 → 三种基本图；形状依赖输入 → orchestrator；需要迭代质量 → evaluator；需要并行探索 → async spawn。每一档都多付 N 次调用。没有 evaluator 的 orchestrator，只是把错误复制成 N 份。
 
-和 GDW 的 playtest loop 同构：先写下「怎样算过」，再让系统跑。工作流图是机制，尺子在第 1 章和第 10 章。
+和 Game Design Workshop 的试玩循环是同一类判断：先写下「怎样算过」，再让系统跑。工作流图是机制，尺子在第 1 章和第 10 章。
 
 ## 个人思考
 
-第 8 章 SDK、第 9 章 CMA 会把这些图收成产品原语（subagent、multiagent roster、advisor）。先在 Messages API 上把图画画对，再搬运行时，否则你会把框架当能力。
+第 8 章 SDK、第 9 章托管 Agents 会把这些图收成产品原语（子代理、多代理名册、顾问）。先在 Messages API 上把图画对，再搬运行时，否则你会把框架当能力。
 
 ## 相关
 

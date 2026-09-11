@@ -12,6 +12,12 @@
       "prompt": "把这篇博客整理成思考：https://zed.dev/blog/introducing-delta",
       "expected_output": "拒绝直接写 thought。先走 ingest-article 落盘源文，或说明单篇源文不够对照；只有用户明确要跨文立场时才写 02-Thoughts/。",
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "thought 对照表里把 throwaway repo 写成抛掷仓，把 cattle 写成牲口。",
+      "expected_output": "按 note-language 改成短命仓库、牲畜。用词规则不在本 skill 再抄一份。",
+      "files": []
     }
   ]
 }

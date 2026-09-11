@@ -4,7 +4,7 @@ title: Game Design Workshop
 
 # Game Design Workshop
 
-Tracy Fullerton《Game Design Workshop: A Playcentric Approach to Creating Innovative Games》第五版（2024）的章节笔记。结构和语气对齐 [[00-GDW阅读导读]] 与 `03-HarnessEngineering/Book1-ClaudeCode`：一章一个文件，先骨架后填。
+Tracy Fullerton《Game Design Workshop: A Playcentric Approach to Creating Innovative Games》第五版（2024）的章节笔记。结构和语气对齐 [[00-GDW阅读导读]] 与 `03-HarnessEngineering/Book1-ClaudeCode`：一章一个文件。
 
 来源：[gamedesignworkshop.com](https://www.gamedesignworkshop.com/) · [Routledge 第五版](https://www.routledge.com/Game-Design-Workshop-A-Playcentric-Approach-to-Creating-Innovative-Games/Fullerton/p/book/9781032607009)
 
@@ -18,4 +18,4 @@ Tracy Fullerton《Game Design Workshop: A Playcentric Approach to Creating Innov
 
 ## 章节笔记
 
-侧栏 `GameDesignWorkshop`。未读章节只留骨架，读完再填「一句话 / 核心概念 / 关键洞察 / 个人思考」。
+侧栏 `GameDesignWorkshop`。未读章节先占位，读完再填「一句话 / 核心概念 / 关键洞察 / 个人思考」。

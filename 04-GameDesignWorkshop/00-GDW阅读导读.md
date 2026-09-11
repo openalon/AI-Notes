@@ -6,7 +6,7 @@ id: n_4de9f046a64b
 
 <details class="note-cite">
 <summary>出处</summary>
-<p>来源：<a href="https://www.gamedesignworkshop.com/whats-new">原网页</a> · 状态：已读（骨架） · 试读：<code>game-design-workshop.pdf</code>（约 72 页；第 3 章开头被 Perlego 墙截断）</p>
+<p>来源：<a href="https://www.gamedesignworkshop.com/whats-new">原网页</a> · 状态：已读 · 试读：<code>game-design-workshop.pdf</code>（约 72 页；第 3 章开头被预览页截断）</p>
 </details>
 
 ## 一句话
@@ -40,7 +40,7 @@ flowchart TD
 
 第 6 章五版改名为 **Ideation**（3/4 版叫 Conceptualization）。目录顺序不用改，课纲可以同一套。
 
-### 三版差在语境，不差在骨架
+### 三版差在语境，不差在方法
 
 | | 3 版 2014 | 4 版 2018 | 5 版 2024 |
 |---|---|---|---|
@@ -54,7 +54,7 @@ flowchart TD
 
 Fullerton 把设计师的工作定义成 **advocate for the player**，不是「把系统做完」。所以试玩不是 QA 末期的礼貌环节，而是设计主路径。Zimmerman 在第 1 章侧栏里说得更狠：先写一本穷尽一切的 design document 再开工，最终游戏几乎从不长成那份文档；迭代是用进行中的原型经验做决定。
 
-和仓库里 Harness 笔记是同一类判断，只是对象不同：Claude Code 用 query loop 约束不稳的模型；这本书用 playtest loop 约束不稳的「我觉得好玩」。两边都拒绝一次想对。
+和仓库里 Harness 笔记是同一类判断，只是对象不同：Claude Code 用主循环约束不稳的模型；这本书用试玩循环约束不稳的「我觉得好玩」。两边都拒绝指望一次就做对。
 
 ## 个人思考
 

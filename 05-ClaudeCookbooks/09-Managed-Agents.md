@@ -11,7 +11,7 @@ id: n_f0faadb3c817
 
 ## 一句话
 
-**CMA 把 agent / environment / session 收成服务端资源：循环、沙箱、文件挂载、多代理和预算由平台跑，你负责事件、版本和闸门。** 入门是「修测试直到绿」；生产是 vault、webhook、prompt 版本、outcome grader。
+**托管 Agents（Claude Managed Agents，CMA）把 agent / environment / session 收成服务端资源：循环、沙箱、文件挂载、多代理和预算由平台跑，你负责事件、版本和闸门。** 入门是「修测试直到绿」；生产是凭证库、webhook、prompt 版本、结果评分器。
 
 ## 核心概念
 
@@ -47,7 +47,7 @@ id: n_f0faadb3c817
 
 `data_analyst_agent`（CSV→HTML）、`slack_data_bot`（Slack 多轮同一 session）、`sre_incident_responder`（告警→根因→PR→人批）、`CMA_with_mongodb_atlas`。未进 registry：`CMA_gate_human_in_the_loop`、`CMA_explore_unfamiliar_codebase`、`CMA_orchestrate_issue_to_pr`——机制在仓库里，章节表标「未登记」即可。
 
-对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
+对照 recipe（默认折叠；机制片段摘自官方 notebook，全文在 GitHub）：
 
 ::: details `managed_agents/CMA_iterate_fix_failing_tests.ipynb` — agent / env / session、挂载、SSE、archive
 
@@ -629,7 +629,7 @@ print("budget:", usd(session.budget.max_list_cost))
 
 :::
 
-::: details `managed_agents/CMA_use_skills_from_a_repo.ipynb` — 自动捡仓库 skills
+::: details `managed_agents/CMA_use_skills_from_a_repo.ipynb` — 自动发现仓库 skills
 
 [GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/managed_agents/CMA_use_skills_from_a_repo.ipynb)
 
@@ -754,7 +754,7 @@ print(
 
 ## 关键洞察
 
-CMA 把第 5 章的图变成平台原语：roster = orchestrator-workers；outcome = evaluator-optimizer；advisor = 中途升级；effort = 按角色买深度。你买的是沙箱和事件，不是「更聪明的 Claude」。
+托管 Agents 把第 5 章的图变成平台原语：名册 = 编排与工人；结果 = 评测再改；顾问 = 中途升级；effort = 按角色买深度。你买的是沙箱和事件，不是「更聪明的 Claude」。
 
 三条不变式值得当制度：上传只读；先 stream 再 send；idle ≠ 结束（看 `stop_reason`）。prompt 版本化把「改一句人设」从发版问题变成配置问题——前提是 session pin 版本，否则一次 update 扫过所有在跑会话。
 
@@ -762,7 +762,7 @@ grader 的 rubric 比 writer 的任务更具体，否则闭环是假的。plan-b
 
 ## 个人思考
 
-SDK vs CMA 不是新替旧。要本地文件系统、自定义权限 UI、IDE 嵌入 → SDK。要按用户隔离凭证、按 session 封顶、按版本回滚、不想运维容器 → CMA。两者都还需要第 10 章的尺子和第 11 章的账单。
+SDK 和托管 Agents 不是新替旧。要本地文件系统、自定义权限 UI、IDE 嵌入 → SDK。要按用户隔离凭证、按 session 封顶、按版本回滚、不想运维容器 → 托管。两者都还需要第 10 章的尺子和第 11 章的账单。
 
 ## 相关
 

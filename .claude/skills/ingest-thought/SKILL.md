@@ -7,7 +7,7 @@ description: 把跨文之后的独立判断写成 AI-Notes 的思考笔记。用
 
 思考是第三类笔记：不是又一篇学习总结，也不是一章书。它只在多篇材料已经入库之后，写分层、对照和自己的推论。
 
-先读本文件。对照成品：`02-Thoughts/Agent-native 软件基础设施与工作流.md`。
+先读本文件。对照成品：`02-Thoughts/Agent-native 软件基础设施与工作流.md`。用词先读 [../note-language/SKILL.md](../note-language/SKILL.md)。
 
 单篇源文走 `ingest-article`。一本书的某一章走 `ingest-book`。
 
@@ -80,6 +80,7 @@ related:
 - `created` 用会话里的「今天」。
 - 不要写「作为 AI 我认为」，不要待办，不要文末「延伸阅读」堆砌。
 - 一句话结论是立场。可以加粗关键从句。
+- 对照表和判断的用词走 `note-language`。
 
 章节名按材料改（「四家各自在补哪一层」只是现成那一篇的名字），但分层对照 + 共同 + 分歧 + 判断这个节奏要在。
 
@@ -116,6 +117,6 @@ related:
 - 不要把 thought 放进 `01-Articles/` 或书籍目录。
 - 不要为了网页把 `[[wikilink]]` 改成 Markdown 链接。
 
-## 修笔记时回写本 skill
+## 修笔记时回写
 
-用户纠正 thought 的结构、对照表或「不要转述」这类约束，且已经落盘、以后还会再犯，把可执行的那条写进本文件。文章侧写 `ingest-article`，书籍侧写 `ingest-book`。
+用词 → `note-language`。thought 结构、对照表、「不要转述」→ 本文件。文章侧写 `ingest-article`，书籍侧写 `ingest-book`。

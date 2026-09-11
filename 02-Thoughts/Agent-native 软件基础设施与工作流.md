@@ -29,12 +29,12 @@ Zed、Cursor、Anthropic、Warp 从四个切面承认同一件事：**Git 仍是
 
 | | Zed Delta / DeltaDB | Cursor Origin / Continuity | Anthropic AI-native SDLC | Warp self-improving skills |
 |---|---|---|---|---|
-| 痛点 | 软件在对话里成形，Git 只看见 commit | Agent 把仓库数量和 clone 频率打到人类托管假设之外 | 代码不再是瓶颈，计划/审查/发布仍按人类速度节流 | 对 agent 的纠正随 session 蒸发，prompt 改不赢 |
+| 痛点 | 软件在对话里成形，Git 只看见 commit | Agent 把仓库数量和 clone 频率推到人类托管假设撑不住的量级 | 代码不再是瓶颈，计划/审查/发布仍按人类速度节流 | 对 agent 的纠正随 session 蒸发，prompt 改不赢 |
 | 改的层 | 工作协议：thread + 活 worktree | 托管协议：WAL 为源，磁盘 Git 为缓存 | 控制协议：工件链 + hooks + 生产闸门 | 进化协议：inner skill + 现场反馈 + outer PR |
 | 对 Git 的态度 | 补 Git，不替换 Git | 兼容 Git，不 fork Git | 仓库可当真理，也可和 Jira/ServiceNow 互链 | skill 就是 git 里的文件，学习就是普通 diff |
 | 一等工件 | 对话、delta、未提交的树 | push、pack、可丢可建的副本 | `intent.md` / `spec.md` / `plan.md` / eval / 闸门记录 | inner `SKILL.md`、人的 why、improver 开的 PR |
 | 协作单位 | 一条可分享、可续跑的 thread | 一个可被 CI / agent 狂读的 repo | 一份被接受就会点燃下一阶段的工件 | 一条落在人已经工作之处的反馈 |
-| 弹性 | 人、本机、云 runner、浏览器、外部 harness 共享同一 store | 热仓上百副本，抛掷仓一份，闲置零份 | 并行 session / worktree；检测确定性，模型按档召唤 | inner 按事件触发，outer 按日程看所有覆盖 |
+| 弹性 | 人、本机、云 runner、浏览器、外部 harness 共享同一 store | 热仓上百副本，短命仓库一份，闲置零份 | 并行 session / worktree；检测确定性，模型按档召唤 | inner 按事件触发，outer 按日程看所有覆盖 |
 | 人的位置 | 在 thread 里指、问、接着干 | 把代码、PR、agent 放进同一个 host | 守闸门：接受 intent、接受 plan、批 PR、放行生产 | 在现场给 why，在 skill PR 上决定合不合 |
 
 表面上一个像新协作产品，一个像新 GitHub，一个像企业流程手册，一个像「如何让 agent 自己变好」。底下的问题是同一个：
@@ -87,7 +87,7 @@ Warp 的句子是：Skills are just files；学习就是对它们做 diff。
 
 方向不同，要求相同：**中间态必须是一等的、可寻址的、强一致或可实时收敛的；对 Anthropic 来说还包括可触发下一闸门的；对 Warp 来说还包括可被 outer skill 读到、变成下一版 inner 的。**
 
-### 3. 都在把宠物变成牲口
+### 3. 都在把宠物变成牲畜
 
 Martí 说得最直白：Spokes 把仓库当 pets。Delta 没说这个词，做的是同一件事：
 
@@ -154,7 +154,7 @@ Cursor：人不再操心「这个 commit 在哪台 fileserver、有没有复制�
 Anthropic：人不再启动每一段。产品负责人接受 intent，工程师接受 plan，code owner 批 PR，release manager 放行生产。循环自己转，判断留在闸门上。
 Warp：人不再手改 prompt。在已经工作的现场给 why，在 skill PR 上决定这条原则进不进系统。判断开始复利，而不是每次从零教。
 
-这和 [[用好AI的第一步：停止和AI聊天]] 完全同构：
+这和 [[用好AI的第一步：停止和AI聊天]] 是同一类判断：
 
 - 人不要再当反馈搬运工
 - 系统要自己闭合

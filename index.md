@@ -17,7 +17,7 @@ hero:
       link: /05-ClaudeCookbooks/
 
 features:
-  - icon: 🗺️
+  - icon: 📋
     title: 总览
     details: 知识库入口与最近新增，用双链跳到具体笔记。
     link: /00-Overview/AI知识库总览
@@ -35,7 +35,7 @@ features:
     link: /03-HarnessEngineering/
   - icon: 🎲
     title: Game Design Workshop
-    details: Fullerton 第五版章节笔记。先定玩家体验目标，再用原型和试玩打到它。
+    details: Fullerton 第五版章节笔记。先写下玩家体验目标，再用原型和试玩把游戏改到符合这个目标。
     link: /04-GameDesignWorkshop/
   - icon: 📒
     title: Claude Cookbooks

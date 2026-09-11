@@ -8,7 +8,7 @@ Anthropic 官方 [claude-cookbooks](https://github.com/anthropics/claude-cookboo
 
 来源：[GitHub](https://github.com/anthropics/claude-cookbooks) · 目录源：[registry.yaml](https://github.com/anthropics/claude-cookbooks/blob/main/registry.yaml)
 
-Notebook 留在本机对照仓库 `~/workspace2/claude-cookbooks`，**不拷进本库**。笔记只写机制、取舍和能带走的判断。
+官方 notebook 留在本机的 claude-cookbooks 仓库，**不拷进本库**。笔记只写机制、取舍和能带走的判断。
 
 建议顺序：先第 1–4 章把「输出、检索、工具、上下文」钉住，再第 5–7 章组工作流，最后第 8–12 章落到 SDK、Managed Agents 和生产面。
 

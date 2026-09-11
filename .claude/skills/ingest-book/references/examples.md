@@ -13,8 +13,7 @@
 
 `04-GameDesignWorkshop/00-GDW阅读导读.md`
 
-- 图上的分支是白话：「还没达到目标，回去改 / 达到目标，进入制作」
-- 不要学早期的「未打到 / 打到了」
+- 图上的分支和对照句用白话；细则见 `note-language`
 
 ## 已填章（密度样本）
 
@@ -30,7 +29,7 @@
 - 折叠里是机制代码（prefill `{`、`input_schema`），不是文件名，也不是整本 notebook
 - 每条有 GitHub 全文链接
 
-## 未读骨架
+## 未读占位
 
 `04-GameDesignWorkshop/04-戏剧元素.md`
 
