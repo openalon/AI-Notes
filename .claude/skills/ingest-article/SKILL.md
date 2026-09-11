@@ -132,7 +132,7 @@ created: YYYY-MM-DD
 
 1. 只结束本仓库的 `vitepress dev`（或它的 node 子进程）。匹配依据是**运行时的仓库根路径**（`pwd` / git 根），不要把本机用户名或绝对路径写进仓库。不要动其他目录里的 VitePress（例如 claude-code-guide、herdr）。
 2. 在仓库根执行 `npm run docs:dev`，放到后台。端口仍走 `.vitepress/config.mts` 的 `5280`，被占用则顺延。
-3. 不要加 `host: true`，不要改端口配置。
+3. 不要加 `host: true`（那会对外网卡开放）。本机必须能打开 `http://127.0.0.1:5280/`：配置里 `server.host` 用 `'127.0.0.1'`，不要只听 `[::1]`。
 4. 收尾那两三句话里带上实际地址，默认 `http://127.0.0.1:5280/`。
 
 ## 不要做的事

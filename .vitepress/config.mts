@@ -90,6 +90,8 @@ export default defineConfig({
     plugins: [copyBookPdfs()],
     server: {
       // 避开本机其他 VitePress 常用的 5173。
+      // 显式绑 IPv4：默认只听 [::1] 时，浏览器打开 127.0.0.1:5280 会被拒绝。
+      host: '127.0.0.1',
       port: 5280
     }
   }
