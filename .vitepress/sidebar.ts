@@ -18,7 +18,7 @@ const SKIP_DIRS = new Set([
 const SKIP_FILES = new Set(['README.md', 'index.md'])
 
 const SECTION_LABELS: Record<string, string> = {
-  '00-Maps': '地图',
+  '00-Overview': '总览',
   '01-Articles': '文章',
   '02-Thoughts': '思考',
   '03-HarnessEngineering': 'Harness Engineering',
@@ -37,7 +37,7 @@ type RankedItem = SidebarItem & { created: string }
 
 export function buildSidebar(): SidebarItem[] {
   const sections = [
-    '00-Maps',
+    '00-Overview',
     '01-Articles',
     '02-Thoughts',
     '03-HarnessEngineering',
@@ -52,7 +52,7 @@ export function buildSidebar(): SidebarItem[] {
       const indexLink = folderIndexLink(abs, name)
       return {
         text: SECTION_LABELS[name] ?? name,
-        collapsed: name !== '00-Maps',
+        collapsed: name !== '00-Overview',
         ...(indexLink ? { link: indexLink } : {}),
         items
       } satisfies SidebarItem

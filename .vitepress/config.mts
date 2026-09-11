@@ -64,12 +64,17 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: '地图', link: '/00-Maps/AI知识库总览' },
+      { text: '总览', link: '/00-Overview/AI知识库总览' },
       { text: '文章', link: '/01-Articles/' },
       { text: '思考', link: '/02-Thoughts/Agent-native 软件基础设施与工作流' },
-      { text: 'Harness', link: '/03-HarnessEngineering/' },
-      { text: 'Game Design', link: '/04-GameDesignWorkshop/' },
-      { text: 'Cookbooks', link: '/05-ClaudeCookbooks/' }
+      {
+        text: '书籍',
+        items: [
+          { text: 'Harness Engineering', link: '/03-HarnessEngineering/' },
+          { text: 'Game Design Workshop', link: '/04-GameDesignWorkshop/' },
+          { text: 'Claude Cookbooks', link: '/05-ClaudeCookbooks/' }
+        ]
+      }
     ],
     sidebar,
     search: { provider: 'local' },

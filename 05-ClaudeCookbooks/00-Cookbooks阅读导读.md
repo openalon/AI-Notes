@@ -2,7 +2,7 @@
 id: n_a458a2b22fc6
 ---
 
-# Cookbooks阅读地图：怎么把 95 道 recipe 读成一本书
+# Cookbooks阅读导读：怎么把 95 道 recipe 读成一本书
 
 <details class="note-cite">
 <summary>出处</summary>
@@ -50,7 +50,7 @@ flowchart TD
 | Part 2 工作流 | 5–7 | 能把单次调用收成 pipeline / 多代理 / Skills |
 | Part 3 产品 | 8–12 | 能在 Agent SDK 或 CMA 上落地，并知道怎么评、怎么花钱、怎么接第三方 |
 
-和 [[00-GDW阅读地图]] 同构：Fullerton 用 playtest loop 约束「我觉得好玩」；这里用输出契约 + 工具边界 + eval 约束「我觉得模型答对了」。两边都拒绝一次想对。
+和 [[00-GDW阅读导读]] 同构：Fullerton 用 playtest loop 约束「我觉得好玩」；这里用输出契约 + 工具边界 + eval 约束「我觉得模型答对了」。两边都拒绝一次想对。
 
 ### 和 Harness 书怎么对
 
@@ -67,7 +67,7 @@ flowchart TD
 
 ### 目录源是 registry，不是 git ls
 
-`registry.yaml` 才是对外食谱表（写这份地图时 95 条）。仓库里还有未进 registry 的 notebook，例如：
+`registry.yaml` 才是对外食谱表（写这份导读时 95 条）。仓库里还有未进 registry 的 notebook，例如：
 
 - `managed_agents/CMA_gate_human_in_the_loop.ipynb`
 - `managed_agents/CMA_explore_unfamiliar_codebase.ipynb`
@@ -85,7 +85,7 @@ flowchart TD
 
 ## 个人思考
 
-12 章已按依赖填完。开读仍从第 1 章输出契约进：模型一开口就可能形状不对，后面所有工具和检索都在放大这个错误。机制细节在各章，这份地图只负责顺序和对照。
+12 章已按依赖填完。开读仍从第 1 章输出契约进：模型一开口就可能形状不对，后面所有工具和检索都在放大这个错误。机制细节在各章，这份导读只负责顺序和对照。
 
 对照仓库留在 `~/workspace2/claude-cookbooks`，本库只引用 GitHub 路径。不要把 notebook 拷进来——那会让笔记和上游抢真相。
 
@@ -93,4 +93,4 @@ flowchart TD
 
 - [[01-先钉输出]]
 - [[00-序言]]
-- [[00-GDW阅读地图]]
+- [[00-GDW阅读导读]]

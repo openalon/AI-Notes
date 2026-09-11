@@ -48,14 +48,230 @@ MCP 给「能调 GitHub」；Skill 给「按我们的月报模板出 xlsx」。B
 
 `managed_agents/CMA_use_skills_from_a_repo.ipynb`：托管会话从 repo 的 `.claude/skills` 发现技能。本地约定和云端会话是同一份文件，不是两套文档。
 
-对照 recipe：
+对照 recipe（默认折叠；机制片段来自对照仓库，全文在 GitHub）：
 
-| 路径 | 钉的是什么 |
-|---|---|
-| `skills/notebooks/01_skills_introduction.ipynb` | 三级加载、和 code execution 的关系 |
-| `skills/notebooks/02_skills_financial_applications.ipynb` | 财务场景：技能包比长 prompt 稳 |
-| `skills/notebooks/03_skills_custom_development.ipynb` | 自己写 Skill 的形状 |
-| `managed_agents/CMA_use_skills_from_a_repo.ipynb` | CMA 自动捡仓库 `.claude/skills` |
+::: details `skills/notebooks/01_skills_introduction.ipynb` — 三级加载、和 code execution 的关系
+
+[GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/01_skills_introduction.ipynb)
+
+```python
+# Simple test to verify API connection
+test_response = client.messages.create(
+    model=MODEL,
+    max_tokens=100,
+    messages=[
+        {
+            "role": "user",
+            "content": "Say 'Connection successful!' if you can read this.",
+        }
+    ],
+)
+
+print("API Test Response:")
+print(test_response.content[0].text)
+print(
+    f"\n✓ Token usage: {test_response.usage.input_tokens} in, {test_response.usage.output_tokens} out"
+)
+
+# Create a PowerPoint presentation
+pptx_response = client.beta.messages.create(
+    model=MODEL,
+    max_tokens=4096,
+    container={"skills": [{"type": "anthropic", "skill_id": "pptx", "version": "latest"}]},
+    tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+    messages=[
+        {
+            "role": "user",
+            "content": """Create a simple 2-slide PowerPoint presentation:
+
+Slide 1: Title slide
+- Title: "Q3 2025 Results"
+- Subtitle: "Acme Corporation"
+
+Slide 2: Revenue Overview
+- Title: "Quarterly Revenue"
+- Add a simple column chart showing:
+  - Q1: $12M
+  - Q2: $13M
+  - Q3: $14M
+
+Use clean, professional formatting.
+""",
+        }
+    ],
+    betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"],
+)
+
+print("PowerPoint Response:")
+print("=" * 80)
+for content in pptx_response.content:
+    if content.type == "text":
+        print(content.text)
+
+print("\n\n📊 Token Usage:")
+print(f"   Input: {pptx_response.usage.input_tokens}")
+print(f"   Output: {pptx_response.usage.output_tokens}")
+```
+
+:::
+
+::: details `skills/notebooks/02_skills_financial_applications.ipynb` — 财务场景：技能包比长 prompt 稳
+
+[GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/02_skills_financial_applications.ipynb)
+
+```python
+def create_skills_message(client, prompt, skills, prefix="", show_token_usage=True):
+    """
+    Helper function to create messages with Skills.
+
+    Args:
+        client: Anthropic client
+        prompt: User prompt
+        skills: List of skill dicts [{"type": "anthropic", "skill_id": "xlsx", "version": "latest"}]
+        prefix: Prefix for downloaded files
+        show_token_usage: Whether to print token usage
+
+    Returns:
+        Tuple of (response, download_results)
+    """
+    response = client.beta.messages.create(
+        model=MODEL,
+        max_tokens=4096,
+        container={"skills": skills},
+        tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
+        messages=[{"role": "user", "content": prompt}],
+        betas=[
+            "code-execution-2025-08-25",
+            "files-api-2025-04-14",
+            "skills-2025-10-02",
+        ],
+    )
+
+    if show_token_usage:
+        print(
+            f"\n📊 Token Usage: {response.usage.input_tokens} in, {response.usage.output_tokens} out"
+        )
+
+    # Download files
+    results = download_all_files(client, response, output_dir=str(OUTPUT_DIR), prefix=prefix)
+
+    return response, results
+
+
+def format_financial_value(value, is_currency=True, decimals=0):
+    """Format financial values for display."""
+    if is_currency:
+        return f"${value:,.{decimals}f}"
+    else:
+        return f"{value:,.{decimals}f}"
+
+
+print("✓ Helper functions defined")
+```
+
+:::
+
+::: details `skills/notebooks/03_skills_custom_development.ipynb` — 自己写 Skill 的形状
+
+[GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/skills/notebooks/03_skills_custom_development.ipynb)
+
+```python
+# Create a new version of the enhanced Financial Analyzer skill
+def create_skill_version(client: Anthropic, skill_id: str, skill_path: str):
+    """Create a new version of an existing skill."""
+    try:
+        version = client.beta.skills.versions.create(
+            skill_id=skill_id, files=files_from_dir(skill_path)
+        )
+        return {
+            "success": True,
+            "version": version.version,
+            "created_at": version.created_at,
+        }
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
+
+# Create the new version with our healthcare enhancement
+if "financial_skill_id" in locals():
+    print("Creating new version of Financial Analyzer with healthcare benchmarks...")
+
+    result = create_skill_version(
+        client, financial_skill_id, str(SKILLS_DIR / "analyzing-financial-statements")
+    )
+
+    if result["success"]:
+        print("✅ New version created successfully!")
+        print(f"   Version: {result['version']}")
+        print(f"   Created: {result['created_at']}")
+        print("\n📊 Version History:")
+        print("   v1: Original skill with tech, retail, financial, manufacturing")
+        print(f"   v{result['version']}: Enhanced with healthcare industry benchmarks")
+    else:
+        print(f"❌ Version creation failed: {result['error']}")
+else:
+    print("⚠️ Please run the previous cells to upload the skill and make enhancements first")
+```
+
+:::
+
+::: details `managed_agents/CMA_use_skills_from_a_repo.ipynb` — CMA 自动捡仓库 `.claude/skills`
+
+[GitHub 全文](https://github.com/anthropics/claude-cookbooks/blob/main/managed_agents/CMA_use_skills_from_a_repo.ipynb)
+
+```python
+env = client.beta.environments.create(
+    name="repo-skills-demo",
+    config={"type": "anthropic_cloud", "networking": {"type": "unrestricted"}},
+    betas=BETAS,
+)
+
+reviewer = client.beta.agents.create(
+    name="cookbook_reviewer",
+    description="Reviews notebooks in a mounted cookbook repository.",
+    model={"id": MODEL},
+    system="You review notebooks in the repository mounted under /workspace. "
+    "When the repository provides a process for a task, follow it.",
+    tools=[{"type": "agent_toolset_20260401"}],
+    betas=BETAS,
+)
+print(f"{reviewer.name}: {reviewer.id} v{reviewer.version}")
+
+session = client.beta.sessions.create(
+    agent=reviewer.id,
+    environment_id=env.id,
+    title="Cookbook audit",
+    resources=[
+        {
+            "type": "github_repository",
+            "url": "https://github.com/anthropics/claude-cookbooks",
+            "authorization_token": GH_TOKEN,
+            "checkout": {"type": "branch", "name": "main"},
+            # mount_path defaults to /workspace/claude-cookbooks
+        }
+    ],
+    betas=BETAS,
+)
+print(session.id, session.status)
+
+from utilities import stream_until_end_turn
+
+client.beta.sessions.events.send(
+    session.id,
+    events=[
+        {
+            "type": "user.message",
+            "content": [{"type": "text", "text": "What skills are available to you in this repo?"}],
+        }
+    ],
+    betas=BETAS,
+)
+stream_until_end_turn(client, session.id)
+```
+
+:::
+
+
 
 ## 关键洞察
 
@@ -69,7 +285,7 @@ Skills 解决的是 **程序性知识的分发和计费**。全塞 system：每�
 
 ## 相关
 
-- [[00-Cookbooks阅读地图]]
+- [[00-Cookbooks阅读导读]]
 - [[05-上下文治理]]
 - [[06-技能Hook与本地规则]]
 - [[09-Managed-Agents]]

@@ -2,7 +2,7 @@
 id: n_4de9f046a64b
 ---
 
-# GDW阅读地图：如何读第五版 Game Design Workshop
+# GDW阅读导读：如何读第五版 Game Design Workshop
 
 <details class="note-cite">
 <summary>出处</summary>

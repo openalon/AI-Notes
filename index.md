@@ -7,8 +7,8 @@ hero:
   tagline: 文章拆解、独立判断、Harness、Game Design Workshop 与 Claude Cookbooks 笔记。Obsidian 里写，网页上读。
   actions:
     - theme: brand
-      text: 从地图开始
-      link: /00-Maps/AI知识库总览
+      text: 从总览开始
+      link: /00-Overview/AI知识库总览
     - theme: alt
       text: Harness 系列
       link: /03-HarnessEngineering/
@@ -18,9 +18,9 @@ hero:
 
 features:
   - icon: 🗺️
-    title: 地图
+    title: 总览
     details: 知识库入口与最近新增，用双链跳到具体笔记。
-    link: /00-Maps/AI知识库总览
+    link: /00-Overview/AI知识库总览
   - icon: 📰
     title: 文章
     details: 对 X / 博客长文的学习总结，保留来源与一句话结论。

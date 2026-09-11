@@ -4,7 +4,7 @@ title: Claude Cookbooks
 
 # Claude Cookbooks
 
-Anthropic 官方 [claude-cookbooks](https://github.com/anthropics/claude-cookbooks) 的学习笔记。结构和语气对齐 [[00-Cookbooks阅读地图]] 与 `04-GameDesignWorkshop`：一章一个文件，12 章已按工程依赖填完。
+Anthropic 官方 [claude-cookbooks](https://github.com/anthropics/claude-cookbooks) 的学习笔记。结构和语气对齐 [[00-Cookbooks阅读导读]] 与 `04-GameDesignWorkshop`：一章一个文件，12 章已按工程依赖填完。
 
 来源：[GitHub](https://github.com/anthropics/claude-cookbooks) · 目录源：[registry.yaml](https://github.com/anthropics/claude-cookbooks/blob/main/registry.yaml)
 
@@ -18,4 +18,4 @@ Notebook 留在本机对照仓库 `~/workspace2/claude-cookbooks`，**不拷进�
 
 ## 章节笔记
 
-侧栏 `Claude Cookbooks`。从 [[00-Cookbooks阅读地图]] 进。
+侧栏 `Claude Cookbooks`。从 [[00-Cookbooks阅读导读]] 进。

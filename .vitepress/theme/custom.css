@@ -148,6 +148,74 @@
   font-size: 11px;
 }
 
+/* Cookbooks recipe source: VitePress ::: details, collapsed by default */
+.vp-doc .custom-block.details {
+  margin: 0.4rem 0;
+  padding: 0.15rem 0 0.15rem 0.2rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .custom-block.details summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin: 0;
+  padding: 0.4rem 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc .custom-block.details summary::marker,
+.vp-doc .custom-block.details summary::-webkit-details-marker {
+  display: none;
+  content: '';
+}
+
+.vp-doc .custom-block.details summary::before {
+  content: '';
+  flex: none;
+  width: 0;
+  height: 0;
+  margin-top: 0.35em;
+  border-style: solid;
+  border-width: 3.5px 0 3.5px 5px;
+  border-color: transparent transparent transparent currentColor;
+  opacity: 0.7;
+}
+
+.vp-doc .custom-block.details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.vp-doc .custom-block.details summary:hover {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .custom-block.details summary code {
+  font-size: 12px;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc .custom-block.details > p:first-of-type {
+  margin: 0 0 0.45rem;
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+}
+
+.vp-doc .custom-block.details[open] {
+  padding-bottom: 0.7rem;
+}
+
+.vp-doc .custom-block.details div[class*='language-'] {
+  margin: 0.2rem 0 0;
+}
+
 .vp-doc img {
   max-width: 100%;
   border-radius: 8px;
