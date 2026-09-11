@@ -1,13 +1,13 @@
 ---
 name: vitepress-gtm
-description: Inject Google Tag Manager (GTM-K3F85R3Z) into this VitePress site. Use when adding analytics/GTM/tracking or verifying every page (including 404) loads the container.
+description: Inject Google Tag Manager (GTM-MNXQCPGT) into this VitePress site. Use when adding analytics/GTM/tracking or verifying every page (including 404) loads the container.
 ---
 
 # VitePress GTM for AI Notes
 
-Site-level container `GTM-K3F85R3Z`. Not per markdown page. New pages pick it up automatically.
+Site-level container `GTM-MNXQCPGT`, shared with herdr-bar / openalon.com. Hits the OpenAlon GA4 stream. Not per markdown page. New pages pick it up automatically.
 
-Reference implementation: `.vitepress/gtm.ts` in this repo (copied from herdr-bar’s `docs/.vitepress/gtm.ts`, with this site’s ID).
+Reference implementation: `.vitepress/gtm.ts` in this repo (copied from herdr-bar’s `docs/.vitepress/gtm.ts`).
 
 ## When
 
@@ -19,14 +19,14 @@ Do **not** use for non-VitePress apps, or a different GTM container unless the u
 
 ## Do
 
-1. Confirm the site is VitePress. Keep `GTM-K3F85R3Z` unless they paste a different ID.
+1. Confirm the site is VitePress. Keep `GTM-MNXQCPGT` unless they paste a different ID.
 
 2. Drop `.vitepress/gtm.ts` (this repo’s VitePress root is the vault root, not `docs/`):
 
    ```ts
    import type { HeadConfig } from 'vitepress'
 
-   export const GTM_ID = 'GTM-K3F85R3Z'
+   export const GTM_ID = 'GTM-MNXQCPGT'
 
    const GTM_BOOTSTRAP = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`
 
@@ -62,18 +62,18 @@ Do **not** use for non-VitePress apps, or a different GTM container unless the u
 
 4. Prove it after `vitepress build`:
 
-   - Built HTML contains `GTM-K3F85R3Z` and `https://www.googletagmanager.com/gtm.js?id=` in `<head>`.
-   - Built HTML contains `googletagmanager.com/ns.html?id=GTM-K3F85R3Z` **after** `<body`.
+   - Built HTML contains `GTM-MNXQCPGT` and `https://www.googletagmanager.com/gtm.js?id=` in `<head>`.
+   - Built HTML contains `googletagmanager.com/ns.html?id=GTM-MNXQCPGT` **after** `<body`.
    - Check home, one nested page, and `404.html`.
    - VitePress minifies the bootstrap (parameter names change). Assert the container ID, not the unminified source.
 
    Example assertion (Node against `.vitepress/dist`):
 
    ```js
-   assert.ok(html.includes('GTM-K3F85R3Z'))
+   assert.ok(html.includes('GTM-MNXQCPGT'))
    assert.ok(html.includes('https://www.googletagmanager.com/gtm.js?id='))
    const bodyOpen = html.search(/<body[^>]*>/)
-   const noscript = html.indexOf('googletagmanager.com/ns.html?id=GTM-K3F85R3Z')
+   const noscript = html.indexOf('googletagmanager.com/ns.html?id=GTM-MNXQCPGT')
    assert.ok(bodyOpen >= 0 && noscript > bodyOpen)
    ```
 
@@ -83,7 +83,7 @@ Do **not** use for non-VitePress apps, or a different GTM container unless the u
 
 - Paste GTM into a markdown page or frontmatter `head` — new pages would miss it.
 - Add gtag.js (`G-…`) next to this container unless the user asks; tags live in GTM, not a second snippet.
-- `--deep` / duplicate: skip if `gtm.js?id=GTM-K3F85R3Z` is already in site `head`.
+- `--deep` / duplicate: skip if `gtm.js?id=GTM-MNXQCPGT` is already in site `head`.
 - Expect the noscript iframe in `vitepress dev` — `transformHtml` runs on build. Head script does load in dev.
 - Change the container ID, dataLayer name, or host (`www.googletagmanager.com`) without an explicit new snippet from the user.
 
