@@ -18,6 +18,18 @@
       "prompt": "thought 对照表里把 throwaway repo 写成抛掷仓，把 cattle 写成牲口。",
       "expected_output": "按 note-language 改成短命仓库、牲畜。用词规则不在本 skill 再抄一份。",
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "用户要求对照一篇已删除、无法读取的文章和两篇已有文章，写 thought。",
+      "expected_output": "停止写入 thought，说明相关源笔记缺失或不可读，请用户先补齐 source；不得凭记忆补造 related 或综合判断。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "重复修改一个已经存在的 thought，且总览已经有它的双链。",
+      "expected_output": "保留原 id，不覆盖无关内容；更新总览时不重复插入已有双链。",
+      "files": []
     }
   ]
 }

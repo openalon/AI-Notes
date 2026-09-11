@@ -30,6 +30,18 @@
       "prompt": "这篇文章对照表里 cattle 我写成牲口了，图上还写了打到另一个数量级。",
       "expected_output": "按 note-language 改：牲畜、推到。不要改源文引语或作者自己的概念。用词规则写在 note-language，不在本 skill 再抄反例。",
       "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "整理一个无法访问、只有标题没有正文的 URL。",
+      "expected_output": "停止写入正式文章笔记，明确说明 source 不可读并请求可访问 URL 或原文；不得凭标题或记忆补造观点。",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "重复整理一个已经存在的 source，且目标 basename 已被手工修改过。",
+      "expected_output": "先发现已有笔记，不静默覆盖；需要修订时保留原 id，并让总览或作者索引不重复插入同一条链接。",
+      "files": []
     }
   ]
 }
