@@ -9,6 +9,7 @@
 `01-Articles/其他/Zed：Introducing Delta.md`
 
 - 文件名带产品前缀
+- `nav: Zed：DeltaDB`（侧栏短标签；完整标题仍是文件名）
 - `source` 是 YAML 列表（多篇同源博文合成一篇）
 - 一句话结论点出「软件在对话里长出来」
 - mermaid 对照旧世界 / 新世界

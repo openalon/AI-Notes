@@ -1,6 +1,7 @@
 ---
 id: n_eda1a1da979e
 title: Anthropic：The AI-native SDLC playbook
+nav: Anthropic：工件闸门
 tags:
   - AI
   - Agent

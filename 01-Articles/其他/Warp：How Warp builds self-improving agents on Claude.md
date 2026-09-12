@@ -1,6 +1,7 @@
 ---
 id: n_a66ddf5ae006
 title: Warp：How Warp builds self-improving agents on Claude
+nav: Warp：skill 闭环
 tags:
   - AI
   - Agent

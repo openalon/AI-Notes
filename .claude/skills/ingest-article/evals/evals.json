@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "整理这篇文章进知识库：https://zed.dev/blog/introducing-delta （若库里已有同名笔记，假装这是新文，用另一个文件名说明你本来会怎么落盘，不要覆盖现有文件。）",
-      "expected_output": "一篇 01-Articles/其他/ 下的学习总结，含 title/tags/source/created、一句话结论、mermaid、核心观点，并说明会往 00-Overview 最近新增插一条双链。不写 thought，不写书籍章节。",
+      "expected_output": "一篇 01-Articles/其他/ 下的学习总结，含 title/nav/tags/source/created、一句话结论、mermaid、核心观点，并说明会往 00-Overview 最近新增插一条双链。nav 是侧栏短标签，不是整句博客标题。不写 thought，不写书籍章节。",
       "files": []
     },
     {

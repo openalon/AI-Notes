@@ -1,6 +1,7 @@
 ---
 id: n_7bdea198768e
 title: Andrew Ng：Shaping the build
+nav: Ng：改规格
 tags:
   - AI
   - Agent

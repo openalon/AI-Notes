@@ -1,5 +1,6 @@
 ---
 id: n_7fa3adb95c01
+nav: OpenClaw 指南
 tags:
   - OpenClaw
   - AI Agent

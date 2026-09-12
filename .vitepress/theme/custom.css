@@ -88,6 +88,10 @@
   margin-bottom: 0.15rem;
 }
 
+.vp-doc h1 + .note-cite {
+  margin-bottom: 1.25rem;
+}
+
 .vp-doc > .note-cite:first-child {
   margin-top: 0;
 }
@@ -246,4 +250,16 @@
 .note-comments .giscus,
 .note-comments .giscus-frame {
   width: 100%;
+}
+
+/* 文章标题长，侧栏最多两行，避免一篇占半屏 */
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text,
+.VPSidebarItem.level-4 .text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.35;
 }

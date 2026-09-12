@@ -1,5 +1,6 @@
 ---
 id: n_c19d6bd82b6c
+nav: 停止和 AI 聊天
 tags:
   - AI
   - AI-Workflow

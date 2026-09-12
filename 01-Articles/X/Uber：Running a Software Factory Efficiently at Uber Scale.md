@@ -1,6 +1,7 @@
 ---
 id: n_ff74662a7ec7
 title: Uber：Running a Software Factory Efficiently at Uber Scale
+nav: Uber：软件工厂
 tags:
   - AI
   - Agent

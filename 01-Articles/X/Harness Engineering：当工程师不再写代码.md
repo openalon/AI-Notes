@@ -1,5 +1,6 @@
 ---
 id: n_36509a9da5ea
+nav: 工程师不再写代码
 tags:
   - AI
   - Agent

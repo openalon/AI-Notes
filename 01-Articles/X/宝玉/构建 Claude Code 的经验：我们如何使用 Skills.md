@@ -1,5 +1,6 @@
 ---
 id: n_c5f3f98f5fc1
+nav: 怎么写 Skills
 tags:
   - Claude-Code
   - Skills

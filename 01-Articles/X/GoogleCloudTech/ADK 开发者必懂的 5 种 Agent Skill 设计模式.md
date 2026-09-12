@@ -1,6 +1,7 @@
 ---
 id: n_8325975a9c80
 title: ADK 开发者必懂的 5 种 Agent Skill 设计模式
+nav: ADK 五种 Skill
 tags:
   - AgentSkill
   - ADK

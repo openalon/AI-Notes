@@ -1,6 +1,7 @@
 ---
 id: n_93403fe300d2
 title: Zed：Introducing Delta
+nav: Zed：DeltaDB
 tags:
   - AI
   - Agent

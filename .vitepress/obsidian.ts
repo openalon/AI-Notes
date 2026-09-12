@@ -175,7 +175,11 @@ function citeHtml(sources: string[]): string {
   return `<details class="note-cite">\n<summary>出处</summary>\n<p>来源：${links.join(' · ')}</p>\n</details>\n\n`
 }
 
-function injectSourceCite(src: string, frontmatter?: Record<string, unknown>): string {
+function injectSourceCite(
+  src: string,
+  frontmatter?: Record<string, unknown>,
+  relativePath = ''
+): string {
   if (src.includes('class="note-cite"')) return src
   const fromFm = sourceList(frontmatter)
   const sources = fromFm.length ? fromFm : parseSourceFromFrontmatter(src)
@@ -193,10 +197,21 @@ function injectSourceCite(src: string, frontmatter?: Record<string, unknown>): s
   if (h1) {
     body = `${h1[0]}\n${block}${body.slice(h1[0].length).replace(/^\n+/, '')}`
   } else {
-    body = block + body
+    const heading = pageHeading(frontmatter, relativePath)
+    body = heading ? `# ${heading}\n\n${block}${body}` : block + body
   }
   if (!head) return body
   return `${head}\n\n${body}`
+}
+
+function pageHeading(
+  frontmatter: Record<string, unknown> | undefined,
+  relativePath: string
+): string {
+  const title = frontmatter?.title
+  if (typeof title === 'string' && title.trim()) return title.trim()
+  const stem = path.posix.basename(relativePath.replaceAll('\\', '/')).replace(/\.md$/i, '')
+  return stem && stem !== 'index' ? stem : ''
 }
 
 function sourceList(frontmatter: Record<string, unknown> | undefined): string[] {
@@ -226,7 +241,7 @@ export function obsidianMarkdown(notes: NoteIndex) {
       src = rewriteWikiLinks(src, notes)
       // VitePress 的 frontmatter 插件先剥 YAML 再 render(content)，
       // 所以文章笔记的 source: 要从 env.frontmatter 读，不能只扫正文。
-      src = injectSourceCite(src, frontmatter)
+      src = injectSourceCite(src, frontmatter, relativePath)
       state.src = src
     })
   }

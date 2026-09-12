@@ -73,6 +73,7 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 的文章分区。�
 ---
 id: n_<12 hex>
 title: <与文件名一致>
+nav: <侧栏短标签，作者或产品 + 机制，约 8 字>
 tags:
   - AI
   - Agent
@@ -106,6 +107,7 @@ created: YYYY-MM-DD
 - 「否定了什么旧假设」是机制段末尾的一句，不是每条后面贴同一句模板。
 - 库里已有相邻判断时，用 `[[wikilink]]` 点明差在哪一层（例如制度闸门 vs 个人技能），不要只外链原文。
 - 内部互链用 `[[笔记名]]`，外链用普通 Markdown。
+- `nav` 是侧栏短标签，不是标题缩写。格式：`作者或产品：机制`（例如 `Ng：改规格`、`Cursor：Git 托管`）。页面标题仍用完整 `title` / 文件名。没有 `nav` 时侧栏会回退到长标题。
 - `tags` 用已有风格：`AI`、`Agent`、`Agent-Native`、`Harness-Engineering`、`Git`、产品名、作者名。英文词保持 Pascal / kebab，与现有笔记一致。
 - `created` 用当天日期（会话里的「今天」）。
 - `id` 用 `n_` + 12 位 hex（例如 `python3 -c "import secrets; print('n_' + secrets.token_hex(6))"`），写入后永不改。网页评论和表情按这个 id 走，跟标题、文件名、路径无关。
@@ -128,6 +130,7 @@ created: YYYY-MM-DD
 ### 5. 自检
 
 - 文件名、`title`、wikilink 三者一致，basename 全库唯一
+- `nav` 已写，侧栏扫一眼能认出是哪篇，不是整句博客标题
 - `id` 已写入且是新生成的，没有复用别的笔记
 - `source` 是可打开的原文链接
 - 一句话结论读起来像判断
