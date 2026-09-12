@@ -11,7 +11,7 @@ id: n_8bc29e8e88f9
 
 ## 最近新增
 
-- [[Andrew Ng：Shaping the build]]：编码 agent 会按规格实现之后，工程师要决定规格里写什么，并驱动构建循环
+- [[Andrew Ng：Shaping the build]]：实现变快之后，稀缺的是谁、以什么节奏改规格；人留在中圈是因为情境优势，不是品味
 - [[00-Cookbooks阅读导读]]：Claude Cookbooks 开读；95 道 recipe 收成 12 章，不把 notebook 拷进库
 - [[03-形式元素]]：抽掉目标或程序，游戏就停机；试读停在玩家人数
 - [[00-GDW阅读导读]]：Game Design Workshop 第五版开读；方法没换，换的是时代语境

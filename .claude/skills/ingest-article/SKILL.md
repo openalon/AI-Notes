@@ -7,7 +7,12 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 的文章分区。�
 
 把一篇外部材料变成这个仓库里的文章笔记，而不是聊天记录。笔记同时给 Obsidian 和 VitePress 用。
 
-先读本文件。对照成品时打开 [references/examples.md](references/examples.md)。用词先读 [../note-language/SKILL.md](../note-language/SKILL.md)。
+先读本文件。写之前打开 [references/examples.md](references/examples.md)，并从**本仓库根** Read 一篇密度样本：
+
+- `01-Articles/其他/Anthropic：The AI-native SDLC playbook.md`
+- `01-Articles/其他/Cursor：Git at any scale.md`
+
+这是 vault 里的成品笔记，不是外链，也不是 skill 目录里的文件。用词先读 [../note-language/SKILL.md](../note-language/SKILL.md)。
 
 跨文判断走 `ingest-thought`。一本书或 recipe 集走 `ingest-book`。本 skill 只管 `01-Articles/`。
 
@@ -38,10 +43,11 @@ description: 把文章、博客、X 长帖整理进 AI-Notes 的文章分区。�
 
 ## 工作流
 
-### 1. 读原文，不要凭记忆写
+### 1. 读原文，不要凭记忆写，也不要凭二次摘要写
 
-- 有 URL：抓全文。X 帖尽量拿到原帖和它指向的 article。
-- 一组同源链接（同一作者同一主题的系列博文）：合成**一篇**笔记，`source` 列全部 URL。
+- 有 URL：抓全文。X 帖尽量拿到原帖和它指向的 article。帖是入口时，笔记按 **article 的论证** 写，不要按推文句子扩写。
+- 一组同源链接（同一作者同一主题的系列博文）：合成**一篇**笔记，`source` 列全部 URL。作者自己的前序信如果是同一机制（例如 Ng 的三层循环），读完再写，不要只写最新一封的目录。
+- WebFetch / 搜索经常返回改写提纲或 125 字摘录。提纲不够。必须拿到：具体分叉、尺度（2–3 人访谈 / 上百份问卷）、作者自己的对照句。拿不到就停，向用户要原文或粘贴，不要用二次摘要当原文。
 - 抓不到就停，向用户要原文或粘贴，不要补造观点；只能读到部分内容时，也不得声称完成了全文阅读。
 - 写入前先按 source、basename 和目标路径查重。已有笔记默认不覆盖；同一 source 重跑时更新原笔记或明确告知已存在，保留原 `id`。
 - 更新总览或作者索引时按已有条目做幂等更新，不重复插入。
@@ -94,15 +100,18 @@ created: YYYY-MM-DD
 
 写作约束：
 
-- **一句话结论**是判断，不是「本文介绍了…」。可以加粗关键从句。
-- **一张图**优先 ` ```mermaid `。标签用词走 `note-language`。只有原文已经有必须保留的配图时，才把图存到 `_assets/` 并用 `![[01-Articles/.../_assets/<file>.png]]`。
-- **核心观点** 4–8 条。每条先写机制，再写它否定了什么旧假设。
+- **一句话结论**是判断，不是「本文介绍了…」。可以加粗关键从句。点出作者改了哪一层假设，不要复述小标题。
+- **一张图**优先 ` ```mermaid `。图画的是机制（谁驱动哪一圈、真理在哪一层），不是把小标题连成流程图。标签用词走 `note-language`。只有原文已经有必须保留的配图时，才把图存到 `_assets/` 并用 `![[01-Articles/.../_assets/<file>.png]]`。
+- **核心观点** 4–8 条，每条是一段能独立站住的机制，不是作者目录的中文版。先写：谁、改了哪一层、用什么替换、读者能带走的判断。数字、分叉、尺度写进段落。引用原句当证据，不要让引语承担正文。
+- 「否定了什么旧假设」是机制段末尾的一句，不是每条后面贴同一句模板。
+- 库里已有相邻判断时，用 `[[wikilink]]` 点明差在哪一层（例如制度闸门 vs 个人技能），不要只外链原文。
 - 内部互链用 `[[笔记名]]`，外链用普通 Markdown。
 - `tags` 用已有风格：`AI`、`Agent`、`Agent-Native`、`Harness-Engineering`、`Git`、产品名、作者名。英文词保持 Pascal / kebab，与现有笔记一致。
 - `created` 用当天日期（会话里的「今天」）。
 - `id` 用 `n_` + 12 位 hex（例如 `python3 -c "import secrets; print('n_' + secrets.token_hex(6))"`），写入后永不改。网页评论和表情按这个 id 走，跟标题、文件名、路径无关。
 - 出处写 YAML `source:`。网页上的 cite 芯片由 `.vitepress/obsidian.ts` 注入，不要在文章正文再手写一份 `<details class="note-cite">`（书籍章节才手写芯片）。
 - 不要写「作为 AI 我认为」、不要列待办、不要在文末加「延伸阅读」堆砌。
+- **反例（不要再写）**：`Andrew Ng：Shaping the build` 的第一稿把四项技能名译成五个小标题，每条 = 一句引语 + 清单 + 「否定的旧假设是…」。删掉小标题只剩目录。对照 `Anthropic：The AI-native SDLC playbook`：每条有工件名、闸门角色、碎掉的前提。
 
 ### 4. 更新总览
 
@@ -125,6 +134,7 @@ created: YYYY-MM-DD
 - 图能在 VitePress / Obsidian 里渲染（mermaid 或 `![[...]]`）
 - 没有把草稿留在对话里却不落盘
 - 没有写成 thought 或书的章节模板
+- **密度**：删掉小标题和列表，正文仍能讲清机制。每条有具体分叉或尺度，不是作者目录的翻译。写前读过一篇密度样本，而不是只读了本 skill 的模板。
 
 ### 6. 重跑本仓库的网页预览
 
@@ -142,6 +152,7 @@ created: YYYY-MM-DD
 - 不要发明第四类内容分区。三类就是文章 / 思考 / 书籍。
 - 不要自动 git commit。
 - 不要把书籍章节笔记改成文章模板，也不要把单篇博客写成 thought。
+- 不要把作者的小标题译成核心观点标题，下面再挂清单。那是比原文差的摘要，不是学习总结。
 
 ## 用户只丢了一个链接时
 
@@ -149,4 +160,4 @@ created: YYYY-MM-DD
 
 ## 修笔记时回写
 
-用词、图上的标签、直译、本机路径 → `note-language`。文章落盘流程（YAML、cite、目录）→ 本文件。思考侧写 `ingest-thought`，书籍侧写 `ingest-book`。
+用词、图上的标签、直译、本机路径 → `note-language`。文章落盘流程（YAML、cite、目录）和**写作密度** → 本文件。思考侧写 `ingest-thought`，书籍侧写 `ingest-book`。
