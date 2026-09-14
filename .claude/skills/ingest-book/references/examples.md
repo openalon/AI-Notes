@@ -31,10 +31,11 @@
 
 ## 未读占位
 
-`04-GameDesignWorkshop/04-戏剧元素.md`
+`04-GameDesignWorkshop/04-戏剧元素.md`、`03-HarnessEngineering/Book2-Comparing/00-Book2阅读导读.md`
 
-- 仍有 `id`、cite（状态：未读）、相关双链
-- 三个填写块可以空，但文件必须先存在，侧栏才能列出来
+- 仍有 `id`（`n_` + 12 hex）、cite（状态：未读）、一句话、相关双链
+- 填写块可以写「（阅读后填写）」，但文件必须先存在，侧栏才能列出来
+- 阅读导读 basename 带书名短前缀；官方附录也要占位，不要只出现在 README
 
 ## 专题首页
 

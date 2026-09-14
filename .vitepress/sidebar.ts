@@ -241,8 +241,13 @@ function frontmatter(abs: string): string {
   return fm?.[1] ?? ''
 }
 
+const FOLDER_LABELS: Record<string, string> = {
+  'Book1-ClaudeCode': 'Book 1',
+  'Book2-Comparing': 'Book 2'
+}
+
 function displayName(name: string): string {
-  return name.replace(/^\d{2}-/, '')
+  return FOLDER_LABELS[name] ?? name.replace(/^\d{2}-/, '')
 }
 
 function stripQuotes(value: string): string {
