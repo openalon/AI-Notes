@@ -72,7 +72,8 @@ export default defineConfig({
         items: [
           { text: 'Harness Engineering', link: '/03-HarnessEngineering/' },
           { text: 'Game Design Workshop', link: '/04-GameDesignWorkshop/' },
-          { text: 'Claude Cookbooks', link: '/05-ClaudeCookbooks/' }
+          { text: 'Claude Cookbooks', link: '/05-ClaudeCookbooks/' },
+          { text: 'Matt Pocock Skills', link: '/06-MattPocockSkills/' }
         ]
       }
     ],

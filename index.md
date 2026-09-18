@@ -4,7 +4,7 @@ layout: home
 hero:
   name: AI Notes
   text: 学习总结与模式沉淀
-  tagline: 文章拆解、独立判断、Harness、Game Design Workshop 与 Claude Cookbooks 笔记。Obsidian 里写，网页上读。
+  tagline: 文章拆解、独立判断、Harness、Game Design Workshop、Claude Cookbooks 与 Matt Pocock Skills 笔记。Obsidian 里写，网页上读。
   actions:
     - theme: brand
       text: 从总览开始
@@ -15,6 +15,9 @@ hero:
     - theme: alt
       text: Claude Cookbooks
       link: /05-ClaudeCookbooks/
+    - theme: alt
+      text: Matt Pocock Skills
+      link: /06-MattPocockSkills/
 
 features:
   - icon: 📋
@@ -41,4 +44,8 @@ features:
     title: Claude Cookbooks
     details: Anthropic 官方 recipe 的学习路径。先钉输出，再做检索和工具，最后落到 SDK 与 Managed Agents。
     link: /05-ClaudeCookbooks/
+  - icon: 🧩
+    title: Matt Pocock Skills
+    details: 把工程纪律拆成可组合 skill。先对齐和共用一套词，再给会变红的反馈，最后才谈规模和评审。
+    link: /06-MattPocockSkills/
 ---

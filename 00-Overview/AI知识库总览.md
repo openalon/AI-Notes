@@ -8,9 +8,11 @@ id: n_8bc29e8e88f9
 - `03-HarnessEngineering/`：Harness 系列书笔记、原网页与离线 PDF
 - `04-GameDesignWorkshop/`：Tracy Fullerton《Game Design Workshop》第五版章节笔记
 - `05-ClaudeCookbooks/`：Anthropic Claude Cookbooks 的章节笔记（recipe 不入库，只引用）
+- `06-MattPocockSkills/`：Matt Pocock Skills For Real Engineers 的章节笔记（SKILL.md 不入库，只引用）
 
 ## 最近新增
 
+- [[00-Skills阅读导读]]：Matt Pocock 这套 skill 开读；四个失败模式收成 9 章，不把 SKILL.md 拷进库
 - [[00-Book2阅读导读]]：Book 2 已读完并写入章节笔记。比较的不是功能表，是秩序安放在哪一层
 - [[Andrew Ng：Shaping the build]]：实现变快之后，稀缺的是谁、以什么节奏改规格；人留在中圈是因为情境优势，不是品味
 - [[00-Cookbooks阅读导读]]：Claude Cookbooks 开读；95 道 recipe 收成 12 章，不把 notebook 拷进库
