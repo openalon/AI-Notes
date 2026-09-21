@@ -12,6 +12,8 @@ id: n_8bc29e8e88f9
 
 ## 最近新增
 
+- [[OpenAI：Aligning language models to follow instructions]]：更大不会更听话；13 亿 InstructGPT 在 API 提示上赢过 1750 亿 GPT-3，对齐的是标注员偏好
+- [[Flavio Copes：Jev]]：判断可以是软件里的聪明 `if`，不必请一台会说话的模型进场
 - [[00-Skills阅读导读]]：Matt Pocock 这套 skill 开读；四个失败模式收成 9 章，不把 SKILL.md 拷进库
 - [[00-Book2阅读导读]]：Book 2 已读完并写入章节笔记。比较的不是功能表，是秩序安放在哪一层
 - [[Andrew Ng：Shaping the build]]：实现变快之后，稀缺的是谁、以什么节奏改规格；人留在中圈是因为情境优势，不是品味
